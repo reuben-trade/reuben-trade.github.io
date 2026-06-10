@@ -172,7 +172,7 @@
     <div class="inner">
       <p class="eyebrow">Machine Learning · Dynamical Systems · Control</p>
       <h1>Reuben</h1>
-      <p class="tagline">Researcher at UWA building machine-learning control systems for the physical world, from wave energy to autonomous flight.</p>
+      <p class="tagline">Driven by an insatiable need to understand; to ask 'why'.</p>
     </div>
   </section>
 
@@ -180,15 +180,15 @@
     <div class="inner">
       <p class="eyebrow">Who I am</p>
       <p class="lead">I build control systems that learn.</p>
-      <p class="body">Honours researcher in machine learning for dynamical systems, optimisation and control. I move between wave energy, drone autonomy and the dynamics of cognition, drawn to the same question in each: how does a system sense its world and act on it, in time?</p>
+      <p class="body">An honours researcher in machine learning for dynamical systems, optimisation and control. The systems I care about are highly nonlinear and notoriously hard to model and control. The question under the work: how can a system make sense of a complex, constantly adapting world, and know what to do in it?</p>
     </div>
   </section>
 
   <section class="layer" id="layer-beat3">
     <div class="inner">
       <p class="eyebrow gold">Where I'm going</p>
-      <p class="lead" style="font-style:normal; color:var(--ink);">What I keep coming back to.</p>
-      <p class="body">Look closely enough at anything that thinks, and you find a network. Look far enough out, and you find one too. I'm chasing the dynamics that connect them: intelligence, control, and what it means to be a system aware of itself.</p>
+      <p class="lead" style="font-style:normal; color:var(--ink);">What keeps pulling me forward.</p>
+      <p class="body">The future is drawing me on: a fascination with consciousness, the mind, and the nature of intelligence; with dynamical systems, their modelling and control; with the renewable energy that will power what comes next.</p>
     </div>
   </section>
 
@@ -219,14 +219,8 @@
         <div class="neuro-bg" aria-hidden="true"><canvas id="neuroCanvas"></canvas></div>
         <span class="tag">Featured · Research project</span>
         <h3>A brain-inspired operating system for drones.</h3>
-        <p>The goal is to turn an ordinary drone with nothing but a basic camera into a system that would normally need thousands of dollars of sensors, so it can fly and make sense of a scene on its own in remote places. The vision pipeline mirrors the human visual hierarchy, every stage running concurrently on the GPU the way the brain works in parallel:</p>
-        <ul class="regions">
-          <li><span class="reg">Retina</span><span class="reg-d">Cheap optical flow on every frame, like the motion-sensitive cells in the eye. It doesn't recognise anything, it just notices the view has moved, and only wakes the heavy networks once that motion builds past a threshold.</span></li>
-          <li><span class="reg">Occipital cortex</span><span class="reg-d">The heavy recognition: object detection for "what" and depth for "where", on background threads. It always works on the newest frame and drops stale ones rather than queuing a backlog.</span></li>
-          <li><span class="reg">Parietal cortex</span><span class="reg-d">A zero-latency world model built on predictive coding. It predicts where everything is every frame, then corrects when slow recognition returns by replaying the motion since, so tracking stays smooth at full framerate even when detection fires only a few times a second.</span></li>
-          <li><span class="reg">Hippocampus</span><span class="reg-d">Builds a running 3D point-cloud map of the space as the drone moves through it.</span></li>
-        </ul>
-        <p>On top of this, a reinforcement-learning agent flies the drone to targets on its own while avoiding obstacles. Next, I'm training a vision-language model alongside it, so the drone can take commands in plain language.</p>
+        <p>Turning an ordinary drone with nothing but a cheap camera into something that would normally need thousands of dollars of sensors, so it can fly and make sense of a scene on its own in remote places. The vision pipeline mirrors the human visual hierarchy, every stage running concurrently on the GPU: a retina that wakes the heavy networks only when the view moves, occipital recognition for "what" and depth for "where", a parietal world model that keeps tracking smooth between detections, and a hippocampus that maps the space in 3D.</p>
+        <p>On top of it, a reinforcement-learning agent flies to targets on its own while avoiding obstacles, with a vision-language model coming next so it can take commands in plain language.</p>
         <div class="chips">
           <span class="chip">Brain-inspired architecture</span>
           <span class="chip">Predictive-coding tracking</span>
@@ -329,7 +323,7 @@
   </main>
 
   <footer>
-    <p class="closing">Currently at UWA. Always happy to talk about control, autonomy and intelligence.</p>
+    <p class="closing">Currently at UWA. Excited to talk about, philosophy, the mind, and the future of intelligence.</p>
     <nav class="links-row" aria-label="Contact">
       <a href="https://github.com/reuben-trade" target="_blank" rel="noopener" data-link="github">GitHub</a>
       <a href="mailto:reubenjstanley@gmail.com" data-link="email">Email</a>

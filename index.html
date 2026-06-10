@@ -78,6 +78,11 @@
   .featured .tag{ font-family:var(--mono); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--cyan); margin-bottom:1.1rem; display:block; }
   .featured h3{ font-family:var(--display); font-weight:300; font-size:clamp(1.8rem,4.4vw,3rem); line-height:1.05; letter-spacing:-.01em; margin-bottom:1.2rem; max-width:18ch; }
   .featured p{ font-size:1.08rem; line-height:1.65; color:#c4cce6; max-width:58ch; font-weight:300; }
+  .regions{ list-style:none; margin:1.7rem 0; padding:0; display:grid; gap:1rem; max-width:66ch; }
+  .regions li{ display:grid; grid-template-columns:158px 1fr; gap:1.2rem; align-items:baseline; }
+  .regions .reg{ font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); line-height:1.5; }
+  .regions .reg-d{ font-size:1rem; line-height:1.55; color:#bcc5e0; font-weight:300; }
+  @media (max-width:620px){ .regions li{ grid-template-columns:1fr; gap:.2rem; } }
   /* drone OS — ambient spiking network behind the text */
   .neuro-bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
   .neuro-bg canvas{ display:block; width:100%; height:100%; }
@@ -214,12 +219,19 @@
         <div class="neuro-bg" aria-hidden="true"><canvas id="neuroCanvas"></canvas></div>
         <span class="tag">Featured · Research project</span>
         <h3>A brain-inspired operating system for drones.</h3>
-        <p>A control stack for drones operating in remote, GPS-denied environments. Each module is inspired by a different region of the brain, mirroring how a biological system senses, remembers, decides and moves, so the drone can perceive its surroundings and act on its own the moment conditions change, instead of waiting on a link back to base. I'm exploring reinforcement learning to sharpen how it adapts.</p>
+        <p>The goal is to turn an ordinary drone with nothing but a basic camera into a system that would normally need thousands of dollars of sensors, so it can fly and make sense of a scene on its own in remote places. The vision pipeline mirrors the human visual hierarchy, every stage running concurrently on the GPU the way the brain works in parallel:</p>
+        <ul class="regions">
+          <li><span class="reg">Retina</span><span class="reg-d">Cheap optical flow on every frame, like the motion-sensitive cells in the eye. It doesn't recognise anything, it just notices the view has moved, and only wakes the heavy networks once that motion builds past a threshold.</span></li>
+          <li><span class="reg">Occipital cortex</span><span class="reg-d">The heavy recognition: object detection for "what" and depth for "where", on background threads. It always works on the newest frame and drops stale ones rather than queuing a backlog.</span></li>
+          <li><span class="reg">Parietal cortex</span><span class="reg-d">A zero-latency world model built on predictive coding. It predicts where everything is every frame, then corrects when slow recognition returns by replaying the motion since, so tracking stays smooth at full framerate even when detection fires only a few times a second.</span></li>
+          <li><span class="reg">Hippocampus</span><span class="reg-d">Builds a running 3D point-cloud map of the space as the drone moves through it.</span></li>
+        </ul>
+        <p>On top of this, a reinforcement-learning agent flies the drone to targets on its own while avoiding obstacles. Next, I'm training a vision-language model alongside it, so the drone can take commands in plain language.</p>
         <div class="chips">
           <span class="chip">Brain-inspired architecture</span>
-          <span class="chip">Modular control stack</span>
-          <span class="chip">Reinforcement learning</span>
-          <span class="chip">Autonomy in GPS-denied environments</span>
+          <span class="chip">Predictive-coding tracking</span>
+          <span class="chip">Reinforcement-learning navigation</span>
+          <span class="chip">Runs on any basic camera</span>
         </div>
       </article>
 

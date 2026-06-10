@@ -1,9 +1,1027 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reuben Stanley · ML for Dynamical Systems</title>
 
+<!-- TODO(Reuben): full name in hero + footer; wire GitHub/email/LinkedIn hrefs; drop demo video into the CosineOne frame. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Spline+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --space:#04060d; --panel:#070a14; --ink:#e9eefb; --muted:#8c96b3; --faint:#5c647e;
+    --cyan:#5ee7ff; --violet:#b06bff; --gold:#ffe6a3; --line:rgba(176,107,255,.18);
+    --display:"Fraunces", Georgia, serif; --body:"Spline Sans", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--space); color:var(--ink); font-family:var(--body); font-weight:300; -webkit-font-smoothing:antialiased; }
+
+  #scene{ position:fixed; inset:0; z-index:0; }
+  #scene canvas{ display:block; }
+  #vignette{ position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:radial-gradient(115% 80% at 50% 42%, rgba(4,6,13,0) 40%, rgba(4,6,13,.5) 80%, rgba(4,6,13,.88) 100%); }
+
+  .layer{ position:fixed; inset:0; z-index:2; display:flex; flex-direction:column; justify-content:center;
+    padding:0 8vw; pointer-events:none; opacity:0; will-change:opacity, transform; }
+  .layer .inner{ position:relative; max-width:760px; }
+  .layer .inner::before{ content:''; position:absolute; inset:-46px -70px -40px -64px; z-index:-1;
+    background:radial-gradient(ellipse 70% 90% at 28% 50%, rgba(4,6,13,.92), rgba(4,6,13,.62) 46%, rgba(4,6,13,0) 76%); filter:blur(18px); }
+
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.32em; text-transform:uppercase; color:var(--cyan); margin-bottom:1.3rem; }
+  .eyebrow.gold{ color:var(--gold); } .eyebrow.violet{ color:var(--violet); }
+  h1{ font-family:var(--display); font-weight:300; font-size:clamp(4rem,14vw,11rem); line-height:.92; letter-spacing:-.015em; text-shadow:0 4px 40px rgba(0,0,0,.55); }
+  .lead{ font-family:var(--display); font-weight:300; font-style:italic; font-size:clamp(1.7rem,4.2vw,3.1rem); line-height:1.12; letter-spacing:-.01em; margin-bottom:1.3rem; text-shadow:0 2px 30px rgba(0,0,0,.6); }
+  .tagline{ font-size:clamp(1rem,2.1vw,1.3rem); line-height:1.55; color:#c4cce6; max-width:46ch; margin-top:1.5rem; font-weight:300; text-shadow:0 2px 24px rgba(0,0,0,.7); }
+  .body{ font-size:clamp(1rem,1.9vw,1.16rem); line-height:1.65; color:#c4cce6; max-width:52ch; font-weight:300; text-shadow:0 2px 24px rgba(0,0,0,.7); }
+
+  .cue{ position:fixed; left:0; right:0; bottom:34px; z-index:3; text-align:center; font-family:var(--mono); font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); opacity:0; transition:opacity .6s ease; }
+  .cue .arrow{ display:block; margin-top:8px; animation:bob 2.2s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); opacity:.5 } 50%{ transform:translateY(6px); opacity:1 } }
+
+  #spacer{ position:relative; z-index:1; height:420vh; }
+
+  main{ position:relative; z-index:4; background:linear-gradient(180deg, rgba(4,6,13,0) 0, rgba(4,6,13,.6) 90px, rgba(4,6,13,.94) 280px, var(--space) 460px); }
+  .section{ padding:9rem 8vw; max-width:1180px; margin:0 auto; }
+  .sec-eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--violet); margin-bottom:1.4rem; }
+  h2{ font-family:var(--display); font-weight:300; letter-spacing:-.015em; font-size:clamp(2.4rem,6vw,4.4rem); line-height:1.0; margin-bottom:1.6rem; }
+  h2 em{ font-style:italic; color:var(--gold); }
+  .section p.copy{ font-size:clamp(1.05rem,2vw,1.25rem); line-height:1.7; color:#c4cce6; max-width:60ch; font-weight:300; }
+  .inline-link{ color:var(--cyan); text-decoration:none; border-bottom:1px solid rgba(94,231,255,.4); transition:color .2s, border-color .2s; }
+  .inline-link:hover, .inline-link:focus-visible{ color:var(--gold); border-color:var(--gold); outline:none; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:1.8rem; }
+  .chip{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; color:var(--ink); padding:8px 14px; border:1px solid var(--line); border-radius:999px; background:rgba(176,107,255,.05); }
+
+  .wavex{ position:relative; overflow:hidden; border-top:1px solid rgba(255,255,255,.06); }
+  .wavex .role{ display:inline-flex; align-items:baseline; gap:.6rem; margin-bottom:1.2rem; }
+  .wavex .role .where{ font-family:var(--mono); font-size:13px; color:var(--cyan); letter-spacing:.06em; }
+
+  /* WaveX — ambient ocean behind the text */
+  .wec-bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .wec-bg canvas{ display:block; width:100%; height:100%; }
+  /* legibility scrim: darkest at the left where the text sits, opening to clear water on the right;
+     plus soft top/bottom fades so the sea melts into the surrounding page */
+  .wavex::after{ content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(100deg, rgba(4,6,13,.92) 0%, rgba(4,6,13,.74) 32%, rgba(4,6,13,.38) 62%, rgba(4,6,13,.08) 100%),
+      linear-gradient(180deg, rgba(4,6,13,.55) 0%, rgba(4,6,13,0) 22%, rgba(4,6,13,0) 78%, rgba(4,6,13,.78) 100%); }
+  .wavex > :not(.wec-bg){ position:relative; z-index:2; }
+
+  .featured{ border-radius:22px; overflow:hidden; margin-top:2rem; border:1px solid rgba(94,231,255,.22);
+    background:radial-gradient(120% 140% at 100% 0%, rgba(94,231,255,.10), transparent 55%), radial-gradient(120% 140% at 0% 100%, rgba(176,107,255,.12), transparent 55%), var(--panel);
+    padding:clamp(2rem,5vw,3.5rem); position:relative; }
+  .featured .tag{ font-family:var(--mono); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--cyan); margin-bottom:1.1rem; display:block; }
+  .featured h3{ font-family:var(--display); font-weight:300; font-size:clamp(1.8rem,4.4vw,3rem); line-height:1.05; letter-spacing:-.01em; margin-bottom:1.2rem; max-width:18ch; }
+  .featured p{ font-size:1.08rem; line-height:1.65; color:#c4cce6; max-width:58ch; font-weight:300; }
+  /* drone OS — ambient spiking network behind the text */
+  .neuro-bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .neuro-bg canvas{ display:block; width:100%; height:100%; }
+  .featured::after{ content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(105deg, rgba(7,10,20,.90) 0%, rgba(7,10,20,.70) 38%, rgba(7,10,20,.34) 70%, rgba(7,10,20,.08) 100%),
+      linear-gradient(0deg, rgba(7,10,20,.6) 0%, rgba(7,10,20,0) 40%); }
+  .featured > :not(.neuro-bg){ position:relative; z-index:2; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(330px,1fr)); gap:1.4rem; margin-top:1.6rem; }
+  .card{ background:var(--panel); border:1px solid rgba(255,255,255,.07); border-radius:18px; padding:1.8rem; display:flex; flex-direction:column; transition:border-color .25s ease, transform .25s ease; }
+  .card:hover{ border-color:var(--line); transform:translateY(-3px); }
+  .card .tag{ font-family:var(--mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--violet); margin-bottom:.9rem; }
+  .card h3{ font-family:var(--display); font-weight:400; font-size:1.5rem; margin-bottom:.7rem; line-height:1.1; }
+  .card p{ font-size:.98rem; line-height:1.6; color:#b3bcd8; font-weight:300; flex:1; }
+  .card .metrics{ display:flex; flex-wrap:wrap; gap:8px; margin-top:1.2rem; }
+  .card .metric{ font-family:var(--mono); font-size:11px; color:var(--gold); border:1px solid rgba(255,230,163,.22); border-radius:8px; padding:5px 10px; }
+  .card .links{ display:flex; gap:1rem; margin-top:1.3rem; }
+  .card .links a{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; padding-bottom:2px; transition:color .2s, border-color .2s; }
+  .card .links a:hover, .card .links a:focus-visible{ color:var(--gold); border-color:var(--gold); outline:none; }
+
+  .video-frame{ margin-top:1.4rem; border-radius:12px; overflow:hidden; aspect-ratio:16/9; position:relative;
+    background:radial-gradient(120% 120% at 50% 30%, rgba(94,231,255,.12), transparent 60%), #0a0e1a; border:1px solid rgba(94,231,255,.18); }
+  .video-frame video{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#05080f; display:block; }
+  .video-fallback{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-decoration:none; cursor:pointer; transition:border-color .25s ease; border-radius:12px; }
+  .video-fallback:hover .play, .video-fallback:focus-visible .play{ border-color:var(--cyan); box-shadow:0 0 18px rgba(94,231,255,.4); }
+  .video-fallback:focus-visible{ outline:2px solid var(--cyan); outline-offset:-3px; }
+  .video-frame .placeholder{ text-align:center; padding:1rem; }
+  .video-frame .play{ width:54px; height:54px; border-radius:50%; margin:0 auto .8rem; border:1px solid rgba(94,231,255,.5); display:flex; align-items:center; justify-content:center; }
+  .video-frame .play::after{ content:''; border-left:14px solid var(--cyan); border-top:9px solid transparent; border-bottom:9px solid transparent; margin-left:4px; }
+  .video-frame .placeholder span{ font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--muted); }
+
+  .ghub-cta{ margin-top:2.4rem; display:inline-flex; align-items:center; gap:.6rem; font-family:var(--mono); font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:12px 22px; transition:border-color .25s, color .25s, background .25s; }
+  .ghub-cta:hover{ border-color:var(--gold); color:var(--gold); background:rgba(255,230,163,.06); }
+
+  /* Background — consultancy + leadership */
+  .exp-stats{ display:flex; flex-wrap:wrap; gap:10px; margin-top:1.8rem; }
+  .exp-stats .metric{ font-family:var(--mono); font-size:11px; color:var(--gold); border:1px solid rgba(255,230,163,.22); border-radius:8px; padding:6px 11px; letter-spacing:.04em; }
+  .exp-block{ margin-top:2.6rem; }
+  .exp-block .exp-label{ font-family:var(--mono); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--faint); display:block; margin-bottom:1rem; }
+  .role-list{ margin-top:2.6rem; border-top:1px solid rgba(255,255,255,.08); }
+  .role-item{ display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem; padding:1.15rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
+  .role-item .r-left{ display:flex; flex-direction:column; gap:.25rem; }
+  .role-item .r-title{ font-family:var(--display); font-weight:400; font-size:1.3rem; line-height:1.1; }
+  .role-item .r-org{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:.05em; }
+  .role-item .r-note{ font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.05em; text-align:right; flex-shrink:0; }
+  @media (max-width:620px){ .role-item{ flex-direction:column; gap:.4rem; } .role-item .r-note{ text-align:left; } }
+
+  /* Hackathons — trophy strip */
+  .hax{ border-top:1px solid rgba(255,255,255,.06); }
+  .trophies{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:1.2rem; margin-top:2rem; }
+  .trophy{ position:relative; overflow:hidden; background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:1.7rem 1.5rem; }
+  .trophy::before{ content:''; position:absolute; top:-30%; right:-30%; width:120px; height:120px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,230,163,.16), transparent 70%); opacity:0; transition:opacity .3s ease; }
+  .trophy.gold::before{ opacity:1; }
+  .trophy .place{ font-family:var(--display); font-weight:300; font-size:2.5rem; line-height:1; display:block; margin-bottom:.7rem; }
+  .trophy.gold .place{ color:var(--gold); }
+  .trophy.bronze .place{ color:#d49a6a; }
+  .trophy .event{ position:relative; font-size:1.02rem; color:var(--ink); line-height:1.3; display:block; }
+  .trophy .host{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-top:.7rem; display:block; }
+
+  footer{ position:relative; z-index:4; background:var(--space); padding:7rem 8vw 4rem; max-width:1180px; margin:0 auto; border-top:1px solid rgba(255,255,255,.06); }
+  footer .closing{ font-family:var(--display); font-style:italic; font-weight:300; font-size:clamp(1.4rem,3.2vw,2.1rem); line-height:1.25; color:var(--ink); max-width:24ch; margin-bottom:2.4rem; }
+  .links-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .links-row a{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); text-decoration:none; padding:11px 18px; border:1px solid var(--line); border-radius:999px; transition:border-color .25s, background .25s, color .25s; }
+  .links-row a:hover, .links-row a:focus-visible{ border-color:var(--gold); background:rgba(255,230,163,.08); color:var(--gold); outline:none; }
+  .links-row a:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  footer .meta{ font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.1em; margin-top:3rem; }
+
+  #loader{ position:fixed; inset:0; z-index:10; background:var(--space); display:flex; align-items:center; justify-content:center; transition:opacity .9s ease; }
+  #loader.hide{ opacity:0; pointer-events:none; }
+  #loader span{ font-family:var(--mono); font-size:12px; letter-spacing:.34em; text-transform:uppercase; color:var(--muted); animation:pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{ opacity:.3 } 50%{ opacity:.9 } }
+
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  @media (max-width:640px){ .layer{ padding:0 7vw; } .section{ padding:6rem 7vw; } footer{ padding:5rem 7vw 3rem; } }
+</style>
+</head>
 <body>
-  <h1>Reuben</h1>
-  <p>What u looking at mate</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
 
+  <h1 class="sr-only">Reuben Stanley, researcher in machine learning for dynamical systems, optimisation and control at UWA.</h1>
+
+  <div id="scene" aria-hidden="true"></div>
+  <div id="vignette" aria-hidden="true"></div>
+
+  <section class="layer" id="layer-hero">
+    <div class="inner">
+      <p class="eyebrow">Machine Learning · Dynamical Systems · Control</p>
+      <h1>Reuben</h1>
+      <p class="tagline">Researcher at UWA building machine-learning control systems for the physical world, from wave energy to autonomous flight.</p>
+    </div>
+  </section>
+
+  <section class="layer" id="layer-about">
+    <div class="inner">
+      <p class="eyebrow">Who I am</p>
+      <p class="lead">I build control systems that learn.</p>
+      <p class="body">Honours researcher in machine learning for dynamical systems, optimisation and control. I move between wave energy, drone autonomy and the dynamics of cognition, drawn to the same question in each: how does a system sense its world and act on it, in time?</p>
+    </div>
+  </section>
+
+  <section class="layer" id="layer-beat3">
+    <div class="inner">
+      <p class="eyebrow gold">Where I'm going</p>
+      <p class="lead" style="font-style:normal; color:var(--ink);">What I keep coming back to.</p>
+      <p class="body">Look closely enough at anything that thinks, and you find a network. Look far enough out, and you find one too. I'm chasing the dynamics that connect them: intelligence, control, and what it means to be a system aware of itself.</p>
+    </div>
+  </section>
+
+  <div class="cue" id="cue">scroll<span class="arrow">↓</span></div>
+
+  <div id="spacer"></div>
+
+  <main>
+    <section class="section wavex" id="wavex">
+      <div class="wec-bg" aria-hidden="true"><canvas id="wecCanvas"></canvas></div>
+      <p class="sec-eyebrow" style="color:var(--cyan)">The centrepiece</p>
+      <div class="role"><span class="where">Machine Learning Engineer · WaveX</span></div>
+      <h2>Machine learning for <em>wave energy.</em></h2>
+      <p class="copy">At WaveX, an Australian wave-energy company, I'm developing an intelligent, learning control system to maximise power generation in the highly nonlinear environment of ocean waves, across a converter of multiple independent bodies that move and couple together. I'm also building the 3D simulation environment used to visualise the system and the data flowing through it. WaveX is sponsoring my honours project.</p>
+      <div class="chips">
+        <span class="chip">Learning-based control</span>
+        <span class="chip">Multi-body WEC</span>
+        <span class="chip">Nonlinear dynamics</span>
+        <span class="chip">3D simulation</span>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <p class="sec-eyebrow">Selected work</p>
+      <h2>Things I've built.</h2>
+
+      <article class="featured">
+        <div class="neuro-bg" aria-hidden="true"><canvas id="neuroCanvas"></canvas></div>
+        <span class="tag">Featured · Research project</span>
+        <h3>A brain-inspired operating system for drones.</h3>
+        <p>A control stack for drones operating in remote, GPS-denied environments. Each module is inspired by a different region of the brain, mirroring how a biological system senses, remembers, decides and moves, so the drone can perceive its surroundings and act on its own the moment conditions change, instead of waiting on a link back to base. I'm exploring reinforcement learning to sharpen how it adapts.</p>
+        <div class="chips">
+          <span class="chip">Brain-inspired architecture</span>
+          <span class="chip">Modular control stack</span>
+          <span class="chip">Reinforcement learning</span>
+          <span class="chip">Autonomy in GPS-denied environments</span>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Startup · Computer vision</span>
+          <h3>CosineOne</h3>
+          <p>Real-time AI security alerts for high-stakes sites. A full-stack build (FastAPI backend, JS frontend) with alerts surfaced both as a live overlay and through a Telegram bot. At its core is a private, on-device ML pipeline that validates custom natural-language alerts like "person taking something from the backyard." I built the pitch deck and demo, and engaged mining and defence prospects for pilots.</p>
+          <div class="video-frame">
+            <!-- Self-hosted demo: export the Canva video as MP4 and place cosineone-demo.mp4 next to index.html.
+                 Optional thumbnail: cosineone-poster.jpg . Until the file exists, the Canva link below shows instead. -->
+            <video id="cosineone-video" controls preload="metadata" playsinline poster="cosineone-poster.jpg">
+              <source src="cosineone-demo.mp4" type="video/mp4">
+            </video>
+            <a class="video-fallback" id="cosineone-fallback" href="https://canva.link/hgk7n7revqqdt3y" target="_blank" rel="noopener" aria-label="Watch the CosineOne demo">
+              <div class="placeholder"><div class="play"></div><span>Watch the demo</span></div>
+            </a>
+          </div>
+          <div class="metrics"><span class="metric">On-device ML</span><span class="metric">Live + Telegram alerts</span></div>
+          <div class="links"><a href="https://canva.link/hgk7n7revqqdt3y" target="_blank" rel="noopener">Demo</a></div>
+        </article>
+
+        <article class="card">
+          <span class="tag">Startup · AI automation</span>
+          <h3>TradieBuddy</h3>
+          <p>An AI automation CRM that books jobs for tradies without a human in the loop. A scheduling algorithm uses the Google Maps API to slot new jobs into the calendar optimally, minimising travel between sites, and offers new leads the best available appointment instantly instead of waiting for an admin to call back. Faster bookings, fuller days, less drive time.</p>
+          <div class="metrics"><span class="metric">Route-optimised scheduling</span><span class="metric">Instant lead booking</span></div>
+        </article>
+
+        <article class="card">
+          <span class="tag">Contract · ML engineering</span>
+          <h3>Semantic camera-roll search</h3>
+          <p>Re-architected the backend for a semantic photo-search app, cutting average search latency from 180s to under 7s (about a 96% drop) while pushing retrieval accuracy to near-perfect. Built the text and image embedding pipelines, face and object tagging, and optimised inference to hit the production SLO. Also authored a reusable Python library for spinning up AI agents and wiring LLM tools into conversational photo search.</p>
+          <div class="metrics"><span class="metric">180s → &lt;7s (≈96%)</span><span class="metric">~100% retrieval</span></div>
+        </article>
+      </div>
+
+      <a class="ghub-cta" href="https://github.com/reuben-trade" target="_blank" rel="noopener" data-link="github">Check out my GitHub →</a>
+    </section>
+
+    <section class="section" id="background">
+      <p class="sec-eyebrow">Background</p>
+      <h2>I started a <em>consultancy.</em></h2>
+      <p class="copy">In 2024 I founded an <a class="inline-link" href="#" data-link="consultancy" target="_blank" rel="noopener">AI and software consultancy</a> through VentureUWA's startup incubator, delivering data, machine-learning and automation work for companies across engineering, healthcare and global manufacturing, and growing it past six figures in revenue.</p>
+      <div class="exp-stats">
+        <span class="metric">6-figure revenue</span>
+        <span class="metric">VentureUWA incubator · 2024</span>
+        <span class="metric">Engineering to MNCs</span>
+      </div>
+
+      <div class="exp-block">
+        <span class="exp-label">Selected clients</span>
+        <div class="chips">
+          <span class="chip">Work Air Tech · engineering</span>
+          <span class="chip">Apollo Healthcare Technologies · healthcare</span>
+          <span class="chip">Freudenberg · global manufacturing</span>
+        </div>
+      </div>
+
+      <div class="role-list">
+        <div class="role-item">
+          <div class="r-left"><span class="r-title">Founder</span><span class="r-org">AI &amp; software consultancy</span></div>
+          <span class="r-note">via VentureUWA incubator · 2024</span>
+        </div>
+        <div class="role-item">
+          <div class="r-left"><span class="r-title">Technical Vice-President</span><span class="r-org">QFin (Quantitative Finance Club)</span></div>
+          <span class="r-note">University of Western Australia</span>
+        </div>
+        <div class="role-item">
+          <div class="r-left"><span class="r-title">Technical Lead</span><span class="r-org">VentureUWA</span></div>
+          <span class="r-note">Student venture program</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hax" id="hackathons">
+      <p class="sec-eyebrow">Hackathons</p>
+      <h2>Friday brief, <em>Sunday demo.</em></h2>
+      <p class="copy">A weekend, a problem I've never seen before, and a team figuring it out together in real time. That's my idea of a good time. I keep doing them for the pace, the people, and how much you learn when you have to ship something real by Sunday.</p>
+      <div class="trophies">
+        <div class="trophy gold">
+          <span class="place">1st</span>
+          <span class="event">BHP Hackathon</span>
+        </div>
+        <div class="trophy gold">
+          <span class="place">1st</span>
+          <span class="event">Spacecubed Startup Weekend</span>
+        </div>
+        <div class="trophy gold">
+          <span class="place">1st</span>
+          <span class="event">Genvis × VentureUWA Hackathon</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="closing">Currently at UWA. Always happy to talk about control, autonomy and intelligence.</p>
+    <nav class="links-row" aria-label="Contact">
+      <a href="https://github.com/reuben-trade" target="_blank" rel="noopener" data-link="github">GitHub</a>
+      <a href="mailto:reubenjstanley@gmail.com" data-link="email">Email</a>
+      <a href="https://www.linkedin.com/in/reuben-stanley/" target="_blank" rel="noopener" data-link="linkedin">LinkedIn</a>
+    </nav>
+    <p class="meta">© 2026 Reuben Stanley</p>
+  </footer>
+
+  <div id="loader"><span>Initialising</span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = Math.min(window.innerWidth, window.innerHeight) < 700;
+  const clamp = (v,a,b)=> Math.min(b, Math.max(a, v));
+
+  const container = document.getElementById('scene');
+  const spacer = document.getElementById('spacer');
+  const renderer = new THREE.WebGLRenderer({ antialias: !isMobile, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0);
+  container.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, window.innerWidth/window.innerHeight, 0.1, 200);
+  camera.position.set(0, 0, 4.3);
+  const group = new THREE.Group();
+  scene.add(group);
+
+  function makeGlowTexture(){
+    const s=64,c=document.createElement('canvas');c.width=c.height=s;const x=c.getContext('2d');
+    const g=x.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+    g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.25,'rgba(255,255,255,.85)');
+    g.addColorStop(.55,'rgba(255,255,255,.25)');g.addColorStop(1,'rgba(255,255,255,0)');
+    x.fillStyle=g;x.fillRect(0,0,s,s);const t=new THREE.Texture(c);t.needsUpdate=true;return t;
+  }
+  const glowTex = makeGlowTexture();
+
+  function makeFlareTexture(){
+    const s=128,c=document.createElement('canvas');c.width=c.height=s;const x=c.getContext('2d');
+    const g=x.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+    g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.15,'rgba(255,244,220,.95)');
+    g.addColorStop(.4,'rgba(255,230,180,.28)');g.addColorStop(1,'rgba(255,230,180,0)');
+    x.fillStyle=g;x.fillRect(0,0,s,s);
+    x.globalCompositeOperation='lighter';
+    let hg=x.createLinearGradient(0,0,s,0);
+    hg.addColorStop(0,'rgba(255,240,210,0)');hg.addColorStop(.5,'rgba(255,240,210,.8)');hg.addColorStop(1,'rgba(255,240,210,0)');
+    x.fillStyle=hg;x.fillRect(0,s/2-1.3,s,2.6);
+    let vg=x.createLinearGradient(0,0,0,s);
+    vg.addColorStop(0,'rgba(255,240,210,0)');vg.addColorStop(.5,'rgba(255,240,210,.8)');vg.addColorStop(1,'rgba(255,240,210,0)');
+    x.fillStyle=vg;x.fillRect(s/2-1.3,0,2.6,s);
+    const t=new THREE.Texture(c);t.needsUpdate=true;return t;
+  }
+  const flareTex = makeFlareTexture();
+
+  function folds(x,y,z){ return (Math.sin(x*4.1+y*2.3)+Math.sin(y*5.3+z*1.7)+Math.sin(z*4.7+x*3.1)+0.5*Math.sin(x*9.2+z*6.4))/4; }
+
+  // ---------- data ----------
+  const N = isMobile ? 1500 : 3000;
+  const brainPos = new Float32Array(N*3);   // also used as geometry 'position'
+  const starPos  = new Float32Array(N*3);
+  const aStar    = new Float32Array(N*3);
+  const aSize    = new Float32Array(N);
+  const aBright  = new Float32Array(N);
+  const aTwPhase = new Float32Array(N);
+  const aTwSpeed = new Float32Array(N);
+  const aGlow    = new Float32Array(N);
+  const AX=1.45, AY=1.02, AZ=1.72;
+
+  // brain shell
+  for (let i=0;i<N;i++){
+    const u=Math.random()*2-1, th=Math.random()*Math.PI*2, sq=Math.sqrt(1-u*u);
+    let nx=sq*Math.cos(th), ny=u, nz=sq*Math.sin(th);
+    let r=1+0.13*folds(nx,ny,nz);
+    const fissure=Math.exp(-(nx*nx)/0.01)*Math.max(0,ny); r-=0.14*fissure;
+    const side=nx>=0?1:-1;
+    let px=nx*AX*r+side*0.05, py=ny*AY*r-0.05, pz=nz*AZ*r;
+    const j=0.96+Math.random()*0.08; px*=j;py*=j;pz*=j;
+    brainPos[i*3]=px;brainPos[i*3+1]=py;brainPos[i*3+2]=pz;
+  }
+
+  // star targets — full field, layered sizes/brightness for depth
+  for (let i=0;i<N;i++){
+    const u=Math.random()*2-1, th=Math.random()*Math.PI*2, sq=Math.sqrt(1-u*u);
+    const R=4+Math.random()*9;
+    const sx=sq*Math.cos(th)*R, sy=u*R*0.78, sz=sq*Math.sin(th)*R-1;
+    starPos[i*3]=sx;starPos[i*3+1]=sy;starPos[i*3+2]=sz;
+    aStar[i*3]=sx;aStar[i*3+1]=sy;aStar[i*3+2]=sz;
+
+    const roll=Math.random();
+    let size,bright;
+    if(roll<0.60){ size=0.016+Math.random()*0.022; bright=0.30+Math.random()*0.30; }      // distant field
+    else if(roll<0.85){ size=0.038+Math.random()*0.030; bright=0.60+Math.random()*0.30; }  // mid
+    else if(roll<0.97){ size=0.066+Math.random()*0.040; bright=0.95+Math.random()*0.35; }  // bright
+    else { size=0.100+Math.random()*0.035; bright=1.20+Math.random()*0.35; }               // bright + near
+    aSize[i]=size; aBright[i]=bright;
+    aTwPhase[i]=Math.random()*Math.PI*2;
+    aTwSpeed[i]=0.5+Math.random()*2.4;   // varied twinkle rate -> "some faster"
+    aGlow[i]=0;
+  }
+
+  // ---------- point shader (per-star size, brightness, twinkle) ----------
+  const vert = [
+    'attribute vec3 aStar;',
+    'attribute float aSize;',
+    'attribute float aBright;',
+    'attribute float aTwPhase;',
+    'attribute float aTwSpeed;',
+    'attribute float aGlow;',
+    'uniform float uMorph; uniform float uTime; uniform float uScale; uniform float uBrainWorld; uniform float uMotion;',
+    'varying vec3 vColor; varying float vAlpha;',
+    'void main(){',
+    '  vec3 brainP = position;',
+    '  vec3 pos = mix(brainP, aStar, uMorph);',
+    '  pos += (1.0 - uMorph) * uMotion * 0.012 * vec3(sin(uTime*1.3 + aTwPhase));',
+    '  vec4 mv = modelViewMatrix * vec4(pos, 1.0);',
+    '  gl_Position = projectionMatrix * mv;',
+    '  vec3 cyan = vec3(0.369, 0.906, 1.0);',
+    '  vec3 violet = vec3(0.690, 0.420, 1.0);',
+    '  float h = clamp((brainP.y + 1.02) / 2.04, 0.0, 1.0);',
+    '  vec3 brainCol = mix(cyan, violet, h) * (1.0 + aGlow);',
+    '  vec3 starCol = vec3(1.0, 0.94, 0.82) * aBright;',
+    '  vColor = mix(brainCol, starCol, uMorph);',
+    '  float tw = 1.0 + uMorph * uMotion * 0.45 * sin(uTime * aTwSpeed + aTwPhase);',
+    '  float world = mix(uBrainWorld, aSize, uMorph) * tw;',
+    '  gl_PointSize = world * (uScale / max(0.001, -mv.z));',
+    '  vAlpha = mix(0.95, clamp(aBright, 0.22, 1.4), uMorph);',
+    '}'
+  ].join('\n');
+
+  const frag = [
+    'precision mediump float;',
+    'varying vec3 vColor; varying float vAlpha;',
+    'void main(){',
+    '  float d = length(gl_PointCoord - 0.5);',
+    '  float core = smoothstep(0.5, 0.0, d);',
+    '  float a = core * vAlpha;',
+    '  if (a < 0.003) discard;',
+    '  gl_FragColor = vec4(vColor * core, a);',
+    '}'
+  ].join('\n');
+
+  function uScaleVal(){ return window.innerHeight * renderer.getPixelRatio() * 0.5; }
+
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(brainPos,3));
+  pGeo.setAttribute('aStar', new THREE.BufferAttribute(aStar,3));
+  pGeo.setAttribute('aSize', new THREE.BufferAttribute(aSize,1));
+  pGeo.setAttribute('aBright', new THREE.BufferAttribute(aBright,1));
+  pGeo.setAttribute('aTwPhase', new THREE.BufferAttribute(aTwPhase,1));
+  pGeo.setAttribute('aTwSpeed', new THREE.BufferAttribute(aTwSpeed,1));
+  pGeo.setAttribute('aGlow', new THREE.BufferAttribute(aGlow,1));
+
+  const pMat = new THREE.ShaderMaterial({
+    uniforms:{ uMorph:{value:0}, uTime:{value:0}, uScale:{value:uScaleVal()}, uBrainWorld:{value:0.045}, uMotion:{value: reduceMotion?0:1} },
+    vertexShader:vert, fragmentShader:frag,
+    transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
+  });
+  const points = new THREE.Points(pGeo, pMat);
+  points.frustumCulled = false;
+  group.add(points);
+
+  // ---------- neural connections (brain phase) ----------
+  function buildNeural(radius, perNodeCap, totalCap){
+    const segs=[]; const cell=radius; const grid=new Map();
+    const key=(x,y,z)=>Math.floor(x/cell)+','+Math.floor(y/cell)+','+Math.floor(z/cell);
+    for (let i=0;i<N;i++){ const k=key(brainPos[i*3],brainPos[i*3+1],brainPos[i*3+2]); if(!grid.has(k))grid.set(k,[]); grid.get(k).push(i); }
+    const seen=new Set();
+    for (let i=0;i<N && segs.length<totalCap;i++){
+      const ix=brainPos[i*3],iy=brainPos[i*3+1],iz=brainPos[i*3+2];
+      const cx=Math.floor(ix/cell),cy=Math.floor(iy/cell),cz=Math.floor(iz/cell); let count=0;
+      for (let dx=-1;dx<=1&&count<perNodeCap;dx++) for (let dy=-1;dy<=1&&count<perNodeCap;dy++) for (let dz=-1;dz<=1&&count<perNodeCap;dz++){
+        const b=grid.get((cx+dx)+','+(cy+dy)+','+(cz+dz)); if(!b)continue;
+        for (const jx of b){ if(jx<=i)continue;
+          const ddx=ix-brainPos[jx*3],ddy=iy-brainPos[jx*3+1],ddz=iz-brainPos[jx*3+2];
+          if(ddx*ddx+ddy*ddy+ddz*ddz<radius*radius){ const id=i*N+jx; if(seen.has(id))continue; seen.add(id); segs.push(i,jx); count++; if(count>=perNodeCap)break; }
+        }
+      }
+    }
+    return segs;
+  }
+
+  // ---------- constellation links: short, sparse, bright-only ----------
+  function buildStarLines(radius, perNodeCap, totalCap){
+    const segs=[]; const cell=radius; const grid=new Map();
+    const key=(x,y,z)=>Math.floor(x/cell)+','+Math.floor(y/cell)+','+Math.floor(z/cell);
+    const idxs=[];
+    for (let i=0;i<N;i++){ if(aBright[i]<0.9) continue; idxs.push(i);
+      const k=key(starPos[i*3],starPos[i*3+1],starPos[i*3+2]); if(!grid.has(k))grid.set(k,[]); grid.get(k).push(i); }
+    const seen=new Set();
+    for (const i of idxs){ if(segs.length>=totalCap)break;
+      const ix=starPos[i*3],iy=starPos[i*3+1],iz=starPos[i*3+2];
+      const cx=Math.floor(ix/cell),cy=Math.floor(iy/cell),cz=Math.floor(iz/cell); let cnt=0;
+      for (let dx=-1;dx<=1&&cnt<perNodeCap;dx++) for (let dy=-1;dy<=1&&cnt<perNodeCap;dy++) for (let dz=-1;dz<=1&&cnt<perNodeCap;dz++){
+        const b=grid.get((cx+dx)+','+(cy+dy)+','+(cz+dz)); if(!b)continue;
+        for (const jx of b){ if(jx===i)continue; const id=i<jx?i*N+jx:jx*N+i; if(seen.has(id))continue;
+          const ddx=ix-starPos[jx*3],ddy=iy-starPos[jx*3+1],ddz=iz-starPos[jx*3+2];
+          if(ddx*ddx+ddy*ddy+ddz*ddz<radius*radius){ seen.add(id); segs.push(i,jx); cnt++; if(cnt>=perNodeCap)break; }
+        }
+      }
+    }
+    return segs;
+  }
+
+  const neuralPairs = buildNeural(0.34, 3, N*2);
+  const starPairs   = buildStarLines(1.05, 2, Math.floor(N*0.22));
+
+  function makeLines(pairs,color,opacity){
+    const geo=new THREE.BufferGeometry(); const pos=new Float32Array(pairs.length*3);
+    geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    const mat=new THREE.LineBasicMaterial({color,transparent:true,opacity,blending:THREE.AdditiveBlending,depthWrite:false});
+    const obj=new THREE.LineSegments(geo,mat); obj.frustumCulled=false;
+    return {obj,pos,pairs,geo};
+  }
+  const neural=makeLines(neuralPairs,0x3a7bd5,0.18);
+  const stars =makeLines(starPairs,0xffe6a3,0.0);
+  group.add(neural.obj); group.add(stars.obj);
+
+  let m=0; // eased morph (shared)
+  function updateLines(line){
+    const {pos,pairs}=line;
+    for (let s=0;s<pairs.length;s++){ const idx=pairs[s];
+      pos[s*3]  = brainPos[idx*3]  +(starPos[idx*3]  -brainPos[idx*3])*m;
+      pos[s*3+1]= brainPos[idx*3+1]+(starPos[idx*3+1]-brainPos[idx*3+1])*m;
+      pos[s*3+2]= brainPos[idx*3+2]+(starPos[idx*3+2]-brainPos[idx*3+2])*m;
+    }
+    line.geo.attributes.position.needsUpdate=true;
+  }
+
+  // ---------- foreground flare stars (varied depth + twinkle speed) ----------
+  const heroStars=[];
+  function addHeroStar(x,y,z,scale,bright,speed){
+    const mat=new THREE.SpriteMaterial({map:flareTex,color:0xfff0d0,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false});
+    const s=new THREE.Sprite(mat); s.position.set(x,y,z); s.scale.set(scale,scale,1);
+    s.userData={base:scale,bright,phase:Math.random()*6.28,speed}; scene.add(s); heroStars.push(s);
+  }
+  // clear of the left-aligned text column; mixed sizes + speeds
+  addHeroStar( 2.1, 0.95, 1.7, 2.4, 1.0, 1.3);
+  addHeroStar(-2.7, 1.45, 0.2, 1.0, 0.6, 2.1);
+  if(!isMobile){
+    addHeroStar( 3.1,-1.5,-0.4, 1.4, 0.7, 0.8);
+    addHeroStar(-3.2,-1.7, 0.6, 0.8, 0.5, 2.6);
+    addHeroStar( 0.6, 2.4,-0.8, 1.1, 0.55,1.7);
+  }
+
+  // ---------- far background field ----------
+  const bgN=1400, bgGeo=new THREE.BufferGeometry(), bgPos=new Float32Array(bgN*3);
+  for (let i=0;i<bgN;i++){ const u=Math.random()*2-1,t=Math.random()*Math.PI*2,sq=Math.sqrt(1-u*u); const R=26+Math.random()*34;
+    bgPos[i*3]=sq*Math.cos(t)*R;bgPos[i*3+1]=u*R;bgPos[i*3+2]=sq*Math.sin(t)*R; }
+  bgGeo.setAttribute('position',new THREE.BufferAttribute(bgPos,3));
+  const bgMat=new THREE.PointsMaterial({size:0.13,map:glowTex,color:0xcdd8ff,transparent:true,opacity:0,depthWrite:false,blending:THREE.AdditiveBlending});
+  const bgStars=new THREE.Points(bgGeo,bgMat); bgStars.frustumCulled=false; scene.add(bgStars);
+
+  // ---------- region pulses ----------
+  const seeds=[]; for (let k=0;k<7;k++) seeds.push(Math.floor(Math.random()*N));
+  let pulseTimer=0;
+  function firePulse(){
+    const seed=seeds[Math.floor(Math.random()*seeds.length)];
+    const sx=brainPos[seed*3],sy=brainPos[seed*3+1],sz=brainPos[seed*3+2], rad=0.55;
+    for (let i=0;i<N;i++){ const dx=brainPos[i*3]-sx,dy=brainPos[i*3+1]-sy,dz=brainPos[i*3+2]-sz; const d2=dx*dx+dy*dy+dz*dz;
+      if(d2<rad*rad){ const f=1-Math.sqrt(d2)/rad; aGlow[i]=Math.min(2.4, aGlow[i]+f*1.8); } }
+  }
+
+  // ---------- scroll → morph ----------
+  let scrollProg=0, rawScroll=0, morphMax=1;
+  function readScroll(){ morphMax=Math.max(1, spacer.offsetHeight-window.innerHeight); rawScroll=window.scrollY; scrollProg=clamp(rawScroll/morphMax,0,1); }
+  window.addEventListener('scroll', readScroll, {passive:true}); readScroll();
+  const easeInOut=t=> t<0.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
+
+  const L={hero:document.getElementById('layer-hero'),about:document.getElementById('layer-about'),beat3:document.getElementById('layer-beat3'),cue:document.getElementById('cue')};
+  function band(pp,a,b,c,d){ if(pp<a||pp>d)return 0; if(pp<b)return (pp-a)/(b-a); if(pp>c)return 1-(pp-c)/(d-c); return 1; }
+  function updateText(){
+    const pp=scrollProg;
+    const h=band(pp,0,0,0.12,0.24), a=band(pp,0.30,0.40,0.56,0.66), f=band(pp,0.72,0.84,0.95,1.0);
+    L.hero.style.opacity=h;  L.hero.style.transform=`translateY(${(-20*(1-h)).toFixed(1)}px)`;
+    L.about.style.opacity=a; L.about.style.transform=`translateY(${(20*(1-a)).toFixed(1)}px)`;
+    L.beat3.style.opacity=f; L.beat3.style.transform=`translateY(${(20*(1-f)).toFixed(1)}px)`;
+    L.cue.style.opacity = pp<0.05 ? 0.8 : 0;
+  }
+
+  let tRX=0,tRY=0,cRX=0,cRY=0;
+  if(!reduceMotion){ window.addEventListener('pointermove',e=>{ const nx=(e.clientX/window.innerWidth)*2-1, ny=(e.clientY/window.innerHeight)*2-1; tRY=nx*0.35; tRX=ny*0.2; },{passive:true}); }
+
+  function onResize(){
+    camera.aspect=window.innerWidth/window.innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+    pMat.uniforms.uScale.value=uScaleVal();
+    readScroll();
+  }
+  window.addEventListener('resize', onResize);
+
+  const clock=new THREE.Clock(); let spin=0;
+
+  function animate(){
+    requestAnimationFrame(animate);
+    const dt=Math.min(0.05,clock.getDelta()), t=clock.elapsedTime;
+    updateText();
+    if (rawScroll > spacer.offsetHeight + 60) return; // canvas fully covered
+
+    m += (easeInOut(scrollProg)-m)*0.06;
+
+    if(!reduceMotion && m<0.7){ pulseTimer-=dt; if(pulseTimer<=0){ firePulse(); pulseTimer=0.45+Math.random()*0.5; } }
+    // decay glow
+    let touched=false;
+    for (let i=0;i<N;i++){ if(aGlow[i]>0){ aGlow[i]=Math.max(0,aGlow[i]-dt*2.0); touched=true; } }
+    if(touched) pGeo.attributes.aGlow.needsUpdate=true;
+
+    pMat.uniforms.uMorph.value=m;
+    pMat.uniforms.uTime.value=t;
+
+    if(m<0.92) updateLines(neural);
+    neural.obj.material.opacity=0.18*Math.max(0,1-m*1.4);
+    if(m>0.12){ updateLines(stars); stars.obj.material.opacity=0.30*Math.max(0,(m-0.25)/0.75); }
+
+    bgMat.opacity=Math.max(0,(m-0.3)/0.7)*0.95;
+
+    const skyA=Math.max(0,(m-0.4)/0.6);
+    for (const s of heroStars){
+      const tw=0.8+0.2*Math.sin(t*s.userData.speed+s.userData.phase);
+      s.material.opacity=skyA*s.userData.bright*tw;
+      const sc=s.userData.base*(0.95+0.07*Math.sin(t*s.userData.speed+s.userData.phase));
+      s.scale.set(sc,sc,1);
+    }
+
+    if(!reduceMotion){ spin+=dt*(0.12*(1-m*0.8)); cRX+=(tRX-cRX)*0.04; cRY+=(tRY-cRY)*0.04; }
+    group.rotation.y=spin+cRY; group.rotation.x=cRX*0.6; bgStars.rotation.y=spin*0.3;
+    camera.position.z=4.3-m*1.2;
+
+    renderer.render(scene,camera);
+  }
+
+  updateLines(neural);
+  animate();
+  setTimeout(()=>document.getElementById('loader').classList.add('hide'), 650);
+})();
+</script>
+
+<script>
+/* WaveX section — ambient irregular ocean behind the text.
+   Abstract by design: no system-specific content, no labels. Many wave trains
+   superpose into Gerstner-steepened (nonlinear) crests with breaking whitecaps
+   and specular glints; it sits under the copy to support reading, not to explain itself. */
+(function(){
+  const canvas=document.getElementById('wecCanvas');
+  if(!canvas||!canvas.getContext) return;
+  const ctx=canvas.getContext('2d');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DPR=Math.min(window.devicePixelRatio||1,2);
+  let W=0,H=0;
+
+  function resize(){
+    const r=canvas.getBoundingClientRect();
+    if(!r.width||!r.height) return;
+    W=r.width; H=r.height;
+    canvas.width=Math.round(W*DPR); canvas.height=Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+
+  const rand=(a,b)=>a+Math.random()*(b-a);
+
+  // ---- build a layered sea. Each layer is a wave train = sum of components.
+  //      Far layers sit high & hazy (atmospheric perspective); near layers sit
+  //      low, steep, detailed, and move faster (parallax). ----
+  const NEAR = (Math.min(W,H)<700)?4:5;
+  const layers=[];
+  function buildLayers(){
+    layers.length=0;
+    for(let i=0;i<NEAR;i++){
+      const t=i/(NEAR-1);                 // 0 far .. 1 near
+      const comps=[];
+      const nC=3+Math.round(t*1.5);       // a few superposed trains per layer
+      for(let c=0;c<nC;c++){
+        comps.push({
+          a: rand(0.5,1.0)*(0.45+c*0.0),  // relative amplitudes
+          k: rand(0.6,1.4)*(1.0+c*0.9),   // wavenumbers (mix of scales)
+          w: rand(0.4,0.9)*(1.0+c*0.4),   // angular speeds
+          p: rand(0,6.2831853)
+        });
+        // normalise so the sum stays bounded regardless of nC
+      }
+      let asum=0; for(const c of comps) asum+=c.a; for(const c of comps) c.a/=asum;
+      layers.push({
+        t, comps,
+        baseY: H*(0.30+t*0.60),           // far high, near low
+        amp:   H*(0.018+t*0.060),         // far small, near large
+        Q:     0.35+t*0.55,               // Gerstner steepness -> nonlinear crests, stronger near
+        speed: 0.5+t*1.0,                 // parallax
+        hue:   200+t*8,
+        light: 0.30+t*0.55                // near layers brighter / higher contrast
+      });
+    }
+  }
+
+  // height & horizontal displacement of a layer at param u (Gerstner)
+  function sample(layer, u, time){
+    const theta0 = u*6.2831853;
+    let y=0, dx=0, slope=0;
+    for(const c of layer.comps){
+      const th = theta0*c.k - time*layer.speed*c.w + c.p;
+      y  += c.a*Math.sin(th);
+      dx += c.a*Math.cos(th);             // crest-sharpening horizontal pull
+      slope += c.a*c.k*Math.cos(th);
+    }
+    return { y, dx, slope };
+  }
+
+  // foam / spray particles
+  const foam=[];
+  function spawnFoam(x,y,intensity){
+    const n=Math.min(3, 1+Math.floor(intensity*3));
+    for(let i=0;i<n;i++) foam.push({ x, y, vx:rand(-12,12), vy:rand(-26,-6),
+      life:0, max:rand(0.5,1.1), r:rand(0.7,1.8) });
+  }
+
+  function draw(time, dt){
+    if(!W||!H) return;
+    ctx.clearRect(0,0,W,H);
+
+    const steps=Math.max(48, Math.floor(W/7));
+    const over=0.08; // sample slightly past edges (Gerstner shifts x)
+
+    for(let li=0; li<layers.length; li++){
+      const L=layers[li];
+      const pts=[];
+      for(let i=0;i<=steps;i++){
+        const u=-over + (i/steps)*(1+2*over);
+        const s=sample(L,u,time);
+        const xpx=(u)*W + L.Q*s.dx*(W*0.045);   // horizontal crest pull
+        const ypx=L.baseY - s.y*L.amp;
+        pts.push(xpx, ypx, s.slope);
+      }
+
+      // fill the water band (down to bottom so nearer layers occlude farther)
+      ctx.beginPath();
+      ctx.moveTo(pts[0], pts[1]);
+      for(let i=1;i<=steps;i++) ctx.lineTo(pts[i*3], pts[i*3+1]);
+      ctx.lineTo(W+20, H+20); ctx.lineTo(-20, H+20); ctx.closePath();
+      const g=ctx.createLinearGradient(0, L.baseY-L.amp, 0, H);
+      const base=L.light;
+      g.addColorStop(0, 'hsla('+L.hue+', 70%, '+(40*base+10)+'%, '+(0.45+0.4*L.t)+')');
+      g.addColorStop(1, 'hsla('+(L.hue+12)+', 80%, 5%, '+(0.55+0.3*L.t)+')');
+      ctx.fillStyle=g; ctx.fill();
+
+      // crest line (brighter, more cyan toward the viewer)
+      ctx.beginPath();
+      ctx.moveTo(pts[0], pts[1]);
+      for(let i=1;i<=steps;i++) ctx.lineTo(pts[i*3], pts[i*3+1]);
+      ctx.strokeStyle='hsla(190, 90%, '+(55+15*L.t)+'%, '+(0.25+0.5*L.t)+')';
+      ctx.lineWidth=1+L.t*0.8; ctx.stroke();
+
+      // whitecaps + foam where crests steepen (front layers only)
+      if(L.t>0.45 && dt>0){
+        for(let i=2;i<steps-1;i++){
+          const slopePrev=pts[(i-1)*3+2], slope=pts[i*3+2];
+          // crest = slope crosses + -> -, with high curvature => breaking
+          if(slopePrev>0 && slope<=0){
+            const x=pts[i*3], y=pts[i*3+1];
+            const steepness=Math.abs(slopePrev-slope)*L.Q;
+            if(steepness>0.9 && Math.random()<0.12*L.t){
+              spawnFoam(x, y, Math.min(1, steepness*0.4));
+              // little white cap
+              ctx.fillStyle='rgba(220,245,255,'+(0.18+0.2*L.t)+')';
+              ctx.beginPath(); ctx.ellipse(x, y, 3+2*L.t, 1.6, 0, 0, 6.2831853); ctx.fill();
+            }
+          }
+        }
+      }
+
+      // glints on the nearest layer's crests (specular light on water -> a nod to the stars)
+      if(li===layers.length-1){
+        for(let i=4;i<steps-1;i+=3){
+          const slopePrev=pts[(i-1)*3+2], slope=pts[i*3+2];
+          if(slopePrev>0 && slope<=0){
+            const x=pts[i*3], y=pts[i*3+1];
+            const tw=0.4+0.6*Math.abs(Math.sin(time*1.7 + x*0.05));
+            ctx.fillStyle='rgba(200,240,255,'+(0.22*tw)+')';
+            ctx.beginPath(); ctx.arc(x, y, 1.2, 0, 6.2831853); ctx.fill();
+          }
+        }
+      }
+    }
+
+    // ---- foam update ----
+    if(dt>0 || foam.length){
+      for(let i=foam.length-1;i>=0;i--){
+        const f=foam[i]; f.life+=dt; if(f.life>=f.max){ foam.splice(i,1); continue; }
+        f.vy+=60*dt; f.x+=f.vx*dt; f.y+=f.vy*dt;
+        const a=(1-f.life/f.max)*0.6;
+        ctx.fillStyle='rgba(225,245,255,'+a.toFixed(3)+')';
+        ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,6.2831853); ctx.fill();
+      }
+    }
+  }
+
+  let raf=null,last=performance.now(),tAcc=0,running=false;
+  function loop(now){ raf=requestAnimationFrame(loop); let dt=(now-last)/1000; last=now; if(dt>0.05)dt=0.05; tAcc+=dt; draw(tAcc,dt); }
+  function start(){ if(running)return; running=true; last=performance.now(); raf=requestAnimationFrame(loop); }
+  function stop(){ running=false; if(raf)cancelAnimationFrame(raf); raf=null; }
+
+  function init(){
+    resize(); buildLayers();
+    if(reduce){ draw(3.0, 0); return; }   // single calm frame
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:0.05}).observe(canvas);
+    } else { start(); }
+    // the section's height changes as text reflows (font load, viewport width) — keep the canvas in sync
+    if('ResizeObserver' in window && canvas.parentElement){
+      let rt=null;
+      new ResizeObserver(()=>{ clearTimeout(rt); rt=setTimeout(()=>{ resize(); buildLayers(); if(!running) draw(tAcc||3.0, 0); }, 120); }).observe(canvas.parentElement);
+    }
+  }
+  window.addEventListener('resize', ()=>{ resize(); buildLayers(); if(!running) draw(tAcc||3.0, 0); });
+  if(document.readyState!=='loading') init(); else window.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+
+<script>
+/* Drone OS featured block — ambient spiking neural network behind the text.
+   Abstract, label-free. Leaky integrate-and-fire nodes; spikes propagate along
+   sparse, mostly feed-forward edges (left -> right), so activity reads as
+   sense -> decide -> act without saying so. */
+(function(){
+  const canvas=document.getElementById('neuroCanvas');
+  if(!canvas||!canvas.getContext) return;
+  const ctx=canvas.getContext('2d');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DPR=Math.min(window.devicePixelRatio||1,2);
+  let W=0,H=0;
+  const rand=(a,b)=>a+Math.random()*(b-a);
+
+  function resize(){
+    const r=canvas.getBoundingClientRect();
+    if(!r.width||!r.height) return;
+    W=r.width; H=r.height;
+    canvas.width=Math.round(W*DPR); canvas.height=Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+
+  const cyan=[94,231,255], violet=[176,107,255];
+  function lerpCol(t){ return [ (cyan[0]+(violet[0]-cyan[0])*t)|0, (cyan[1]+(violet[1]-cyan[1])*t)|0, (cyan[2]+(violet[2]-cyan[2])*t)|0 ]; }
+
+  let nodes=[], edges=[], spikes=[];
+  function build(){
+    nodes=[]; edges=[]; spikes=[];
+    const small=Math.min(W,H)<420 || W<560;
+    const N = small ? 26 : 42;
+    // columns left->right: a couple of input nodes, a deeper middle, a few outputs
+    for(let i=0;i<N;i++){
+      // bias x toward an organic layered spread
+      const col=Math.random();
+      const x = 0.06 + Math.pow(col,0.9)*0.88;
+      const y = rand(0.08,0.92);
+      nodes.push({ x, y, v:Math.random()*0.3, fire:0, refr:0, out:[] });
+    }
+    nodes.sort((a,b)=>a.x-b.x);
+    // sparse, mostly forward edges: connect each node to a few nearby nodes with greater x
+    for(let i=0;i<nodes.length;i++){
+      const a=nodes[i];
+      const cand=[];
+      for(let j=0;j<nodes.length;j++){
+        if(j===i) continue;
+        const b=nodes[j];
+        const dx=b.x-a.x, dy=b.y-a.y;
+        const d=Math.hypot(dx,dy);
+        if(d<0.34 && dx>-0.04){ cand.push({j, d, fwd:dx>=0}); }
+      }
+      cand.sort((p,q)=>p.d-q.d);
+      const k=Math.min(cand.length, 1+Math.floor(Math.random()*3));
+      for(let c=0;c<k;c++){
+        const e={ a:i, b:cand[c].j, w:rand(0.18,0.34) };
+        edges.push(e); a.out.push(edges.length-1);
+      }
+    }
+    // mark left-most nodes as spontaneous "input" emitters
+    inputs=[]; for(let i=0;i<nodes.length;i++){ if(nodes[i].x<0.18) inputs.push(i); }
+    if(inputs.length===0) inputs.push(0);
+  }
+  let inputs=[];
+
+  const TH=1.0, REFR=0.5, LEAK=0.7;
+  function fire(ni, time){
+    const n=nodes[ni];
+    n.fire=1; n.v=0; n.refr=REFR;
+    for(const ei of n.out){
+      const e=edges[ei];
+      spikes.push({ e:ei, t:0, sp:rand(0.8,1.4) });
+    }
+  }
+
+  let spawnTimer=0;
+  function draw(time, dt){
+    if(!W||!H) return;
+    ctx.clearRect(0,0,W,H);
+
+    // spontaneous input firing -> cascades
+    if(dt>0){
+      spawnTimer-=dt;
+      if(spawnTimer<=0){
+        const ni=inputs[(Math.random()*inputs.length)|0];
+        if(nodes[ni].refr<=0) fire(ni, time);
+        spawnTimer=rand(0.18,0.5);
+      }
+    }
+
+    // edges (faint, static)
+    for(const e of edges){
+      const a=nodes[e.a], b=nodes[e.b];
+      ctx.strokeStyle='rgba(120,150,200,0.10)';
+      ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(a.x*W,a.y*H); ctx.lineTo(b.x*W,b.y*H); ctx.stroke();
+    }
+
+    // spikes travelling along edges
+    for(let i=spikes.length-1;i>=0;i--){
+      const s=spikes[i];
+      if(dt>0) s.t += s.sp*dt;
+      const e=edges[s.e], a=nodes[e.a], b=nodes[e.b];
+      if(s.t>=1){
+        // deliver charge
+        const tgt=nodes[e.b];
+        if(tgt.refr<=0){ tgt.v += e.w; if(tgt.v>=TH){ fire(e.b, time); } }
+        spikes.splice(i,1); continue;
+      }
+      const x=(a.x+(b.x-a.x)*s.t)*W, y=(a.y+(b.y-a.y)*s.t)*H;
+      const col=lerpCol(a.y);
+      // glowing travelling pulse
+      const g=ctx.createRadialGradient(x,y,0,x,y,7);
+      g.addColorStop(0,'rgba('+col[0]+','+col[1]+','+col[2]+',0.9)');
+      g.addColorStop(1,'rgba('+col[0]+','+col[1]+','+col[2]+',0)');
+      ctx.fillStyle=g; ctx.fillRect(x-7,y-7,14,14);
+    }
+
+    // nodes
+    for(const n of nodes){
+      if(dt>0){
+        n.v *= Math.pow(LEAK, dt);      // leaky decay
+        if(n.refr>0) n.refr-=dt;
+        if(n.fire>0) n.fire-=dt*2.2;
+      }
+      const x=n.x*W, y=n.y*H;
+      const col=lerpCol(n.y);
+      const charge=Math.min(1, n.v/TH);
+      const flash=Math.max(0, n.fire);
+      // base dot
+      const baseA=0.18+0.5*charge;
+      ctx.fillStyle='rgba('+col[0]+','+col[1]+','+col[2]+','+baseA.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(x,y,1.6+1.2*charge,0,6.2831853); ctx.fill();
+      // fire flash glow
+      if(flash>0.02){
+        const r=10+10*flash;
+        const g=ctx.createRadialGradient(x,y,0,x,y,r);
+        g.addColorStop(0,'rgba('+col[0]+','+col[1]+','+col[2]+','+(0.6*flash)+')');
+        g.addColorStop(1,'rgba('+col[0]+','+col[1]+','+col[2]+',0)');
+        ctx.fillStyle=g; ctx.fillRect(x-r,y-r,2*r,2*r);
+      }
+    }
+
+    // keep some baseline life if everything goes quiet
+    if(spikes.length===0 && Math.random()<0.02 && dt>0){
+      const ni=inputs[(Math.random()*inputs.length)|0]; if(nodes[ni].refr<=0) fire(ni,time);
+    }
+  }
+
+  let raf=null,last=performance.now(),tAcc=0,running=false;
+  function loop(now){ raf=requestAnimationFrame(loop); let dt=(now-last)/1000; last=now; if(dt>0.05)dt=0.05; tAcc+=dt; draw(tAcc,dt); }
+  function start(){ if(running)return; running=true; last=performance.now(); raf=requestAnimationFrame(loop); }
+  function stop(){ running=false; if(raf)cancelAnimationFrame(raf); raf=null; }
+
+  function init(){
+    resize(); build();
+    if(reduce){ // a few cascades, then hold a still frame
+      for(let i=0;i<140;i++) draw(i*0.05, 0.05);
+      // freeze: clear spikes so nothing is mid-flight, render once
+      spikes.length=0; draw(7.0,0); return;
+    }
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:0.05}).observe(canvas);
+    } else { start(); }
+    if('ResizeObserver' in window && canvas.parentElement){
+      let rt=null;
+      new ResizeObserver(()=>{ clearTimeout(rt); rt=setTimeout(()=>{ resize(); build(); if(!running) draw(tAcc||7.0,0); }, 140); }).observe(canvas.parentElement);
+    }
+  }
+  window.addEventListener('resize', ()=>{ resize(); build(); if(!running) draw(tAcc||7.0,0); });
+  if(document.readyState!=='loading') init(); else window.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+
+<script>
+/* CosineOne demo: reveal the inline player only if cosineone-demo.mp4 is present;
+   otherwise keep the Canva link visible. */
+(function(){
+  var v=document.getElementById('cosineone-video');
+  var fb=document.getElementById('cosineone-fallback');
+  if(!v) return;
+  v.style.display='none';                 // hidden until we confirm the file loads
+  var revealed=false;
+  function reveal(){ if(revealed) return; revealed=true; v.style.display='block'; if(fb) fb.style.display='none'; }
+  v.addEventListener('loadedmetadata', reveal);
+  // if the source fails (no file yet), do nothing -> Canva fallback stays
+  v.load();
+})();
+</script>
+</body>
 </html>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1037.480315pt" height="317.480315pt" viewBox="0 0 1037.480315 317.480315" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-16T16:24:02.237478</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 317.480315 
+L 1037.480315 317.480315 
+L 1037.480315 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 321.618898 190.488189 
+L 1001.168504 190.488189 
+L 1001.168504 22.223622 
+L 321.618898 22.223622 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 688.943009 190.488189 
+L 688.943009 22.223622 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke-dasharray: 8,8; stroke-dashoffset: 0; stroke: #008f80; stroke-width: 2"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_2">
+      <path d="M 321.618898 190.488189 
+L 321.618898 22.223622 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_3"/>
+     <g id="text_1">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="321.618898" y="224.006189" transform="rotate(-0 321.618898 224.006189)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_4">
+      <path d="M 505.280953 190.488189 
+L 505.280953 22.223622 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_5"/>
+     <g id="text_2">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="505.280953" y="224.006189" transform="rotate(-0 505.280953 224.006189)">0.5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_6">
+      <path d="M 688.943009 190.488189 
+L 688.943009 22.223622 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7"/>
+     <g id="text_3">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="688.943009" y="224.006189" transform="rotate(-0 688.943009 224.006189)">1.0</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_8">
+      <path d="M 872.605065 190.488189 
+L 872.605065 22.223622 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9"/>
+     <g id="text_4">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="872.605065" y="224.006189" transform="rotate(-0 872.605065 224.006189)">1.5</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: middle; fill: #12384b" x="661.393701" y="267.039189" transform="rotate(-0 661.393701 267.039189)">Command computation time (s)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #12384b" x="304.618898" y="81.474676" transform="rotate(-0 304.618898 81.474676)">Direct suffix scoring</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #008f80" x="304.618898" y="159.737265" transform="rotate(-0 304.618898 159.737265)">POD reconstruction</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 321.618898 87.964197 
+L 879.64874 87.964197 
+L 879.64874 50.398154 
+L 321.618898 50.398154 
+z
+" clip-path="url(#p92749d50fa)" style="fill: #8ca0ab"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 321.618898 166.226786 
+L 605.258919 166.226786 
+L 605.258919 128.660743 
+L 321.618898 128.660743 
+z
+" clip-path="url(#p92749d50fa)" style="fill: #008f80"/>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 879.64874 69.181176 
+L 881.883934 69.181176 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 3"/>
+    <path d="M 605.258919 147.443765 
+L 606.265195 147.443765 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 3"/>
+   </g>
+   <g id="LineCollection_2">
+    <path d="M 881.883934 78.572686 
+L 881.883934 59.789665 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 2.5"/>
+    <path d="M 606.265195 156.835276 
+L 606.265195 138.052254 
+" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 2.5"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 321.618898 190.488189 
+L 1001.168504 190.488189 
+" style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="688.943009" y="23.788874" transform="rotate(-0 688.943009 23.788874)">1 Hz budget</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 28px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="894.341705" y="80.045176" transform="rotate(-0 894.341705 80.045176)">1.519 s</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 28px; font-family: 'Noto Sans'; text-anchor: start; fill: #008f80" x="619.951883" y="158.307765" transform="rotate(-0 619.951883 158.307765)">0.772 s</text>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="25.937008" y="306.368504" transform="rotate(-0 25.937008 306.368504)">Median; caps: 95th percentile · eight requests × ten repeats</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p92749d50fa">
+   <rect x="321.618898" y="22.223622" width="679.549606" height="168.264567"/>
+  </clipPath>
+ </defs>
+</svg>

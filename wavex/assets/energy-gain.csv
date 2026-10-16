@@ -1,0 +1,5 @@
+arm_id,label,mean_gain_percent,n_paired_waves,median_command_time_ms,p95_command_time_ms,update_budget_ms,fraction_missed_update_budget
+mpc_1hz_phi_B2x088,Adjusted 1 Hz NMPC,17.52149161197982,36,771.4415909867967,777.8451839854824,1000,0.0
+mpc_1hz_phi_B2x100,Nominal 1 Hz NMPC,15.684239357793546,36,770.6474990045535,775.1381145601044,1000,0.0
+greedy_1hz_phi_B2x100,1 Hz greedy,1.7661632567406962,36,113.58103751263116,116.3980584431556,1000,0.0
+mpc_2hz_phi_B2x100,2 Hz NMPC · offline,30.907854796486156,36,771.5615644992795,778.1879743633908,500,1.0

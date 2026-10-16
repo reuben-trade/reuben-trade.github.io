@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1020.472441pt" height="462.047244pt" viewBox="0 0 1020.472441 462.047244" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-16T16:24:02.638291</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 462.047244 
+L 1020.472441 462.047244 
+L 1020.472441 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 291.563555 384.076772 
+L 291.563555 155.940945 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 462.128234 384.076772 
+L 462.128234 155.940945 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 632.692913 384.076772 
+L 632.692913 155.940945 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 803.257593 384.076772 
+L 803.257593 155.940945 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 973.822272 384.076772 
+L 973.822272 155.940945 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_2">
+    <path d="M 209.925759 89.521654 
+L 411.104612 89.521654 
+L 411.104612 51.980315 
+L 209.925759 51.980315 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #12384b"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 414.020247 89.521654 
+L 997.147357 89.521654 
+L 997.147357 51.980315 
+L 414.020247 51.980315 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #ecf6f5; stroke-dasharray: 4.8,3.6; stroke-dashoffset: 0; stroke: #008f80; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 291.563555 249.794291 
+L 632.692913 249.794291 
+L 632.692913 218.028543 
+L 291.563555 218.028543 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #f2f5f7"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 634.150731 249.794291 
+L 801.799775 249.794291 
+L 801.799775 218.028543 
+L 634.150731 218.028543 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #12384b"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 804.715411 249.794291 
+L 972.364454 249.794291 
+L 972.364454 218.028543 
+L 804.715411 218.028543 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #008f80"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 299.378082 176.398879 
+Q 462.126708 196.369891 623.210768 216.136644 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #008f80; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 617.993493 212.675426 
+L 623.210768 216.136644 
+L 617.311428 218.233734 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #008f80; stroke: #008f80; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 291.563555 371.081693 
+L 632.692913 371.081693 
+L 632.692913 339.315945 
+L 291.563555 339.315945 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #f2f5f7"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 634.150731 371.081693 
+L 801.799775 371.081693 
+L 801.799775 339.315945 
+L 634.150731 339.315945 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #12384b"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 804.715411 371.081693 
+L 972.364454 371.081693 
+L 972.364454 339.315945 
+L 804.715411 339.315945 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #12384b"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 299.378082 297.68628 
+Q 462.126708 317.657293 623.210768 337.424046 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #b86235; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 617.993493 333.962827 
+L 623.210768 337.424046 
+L 617.311428 339.521135 
+z
+" clip-path="url(#p881ae99ac8)" style="fill: #b86235; stroke: #b86235; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 291.563555 173.267717 
+L 973.822272 173.267717 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 291.563555 173.267717 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #008f80; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="m30daa13942" d="M 0 3.5 
+C 0.928211 3.5 1.81853 3.131218 2.474874 2.474874 
+C 3.131218 1.81853 3.5 0.928211 3.5 0 
+C 3.5 -0.928211 3.131218 -1.81853 2.474874 -2.474874 
+C 1.81853 -3.131218 0.928211 -3.5 0 -3.5 
+C -0.928211 -3.5 -1.81853 -3.131218 -2.474874 -2.474874 
+C -3.131218 -1.81853 -3.5 -0.928211 -3.5 0 
+C -3.5 0.928211 -3.131218 1.81853 -2.474874 2.474874 
+C -1.81853 3.131218 -0.928211 3.5 0 3.5 
+z
+" style="stroke: #008f80"/>
+    </defs>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#m30daa13942" x="291.563555" y="173.267717" style="fill: #008f80; stroke: #008f80"/>
+    </g>
+   </g>
+   <g id="line2d_8">
+    <path d="M 632.692913 173.267717 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #008f80; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#m30daa13942" x="632.692913" y="173.267717" style="fill: #008f80; stroke: #008f80"/>
+    </g>
+   </g>
+   <g id="line2d_9">
+    <path d="M 973.822272 173.267717 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #008f80; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#m30daa13942" x="973.822272" y="173.267717" style="fill: #008f80; stroke: #008f80"/>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <path d="M 291.563555 294.555118 
+L 973.822272 294.555118 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #dde7ec; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 291.563555 294.555118 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #b86235; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="mbabc373231" d="M 0 3.5 
+C 0.928211 3.5 1.81853 3.131218 2.474874 2.474874 
+C 3.131218 1.81853 3.5 0.928211 3.5 0 
+C 3.5 -0.928211 3.131218 -1.81853 2.474874 -2.474874 
+C 1.81853 -3.131218 0.928211 -3.5 0 -3.5 
+C -0.928211 -3.5 -1.81853 -3.131218 -2.474874 -2.474874 
+C -3.131218 -1.81853 -3.5 -0.928211 -3.5 0 
+C -3.5 0.928211 -3.131218 1.81853 -2.474874 2.474874 
+C -1.81853 3.131218 -0.928211 3.5 0 3.5 
+z
+" style="stroke: #b86235"/>
+    </defs>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#mbabc373231" x="291.563555" y="294.555118" style="fill: #b86235; stroke: #b86235"/>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <path d="M 462.128234 294.555118 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #b86235; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#mbabc373231" x="462.128234" y="294.555118" style="fill: #b86235; stroke: #b86235"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 632.692913 294.555118 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #b86235; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#mbabc373231" x="632.692913" y="294.555118" style="fill: #b86235; stroke: #b86235"/>
+    </g>
+   </g>
+   <g id="line2d_14">
+    <path d="M 803.257593 294.555118 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #b86235; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#mbabc373231" x="803.257593" y="294.555118" style="fill: #b86235; stroke: #b86235"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 973.822272 294.555118 
+" clip-path="url(#p881ae99ac8)" style="fill: none; stroke: #b86235; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#p881ae99ac8)">
+     <use xlink:href="#mbabc373231" x="973.822272" y="294.555118" style="fill: #b86235; stroke: #b86235"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #12384b" x="23.325084" y="34.914157" transform="rotate(-0 23.325084 34.914157)">Score the same 10 s forecast at every decision</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="23.325084" y="80.730882" transform="rotate(-0 23.325084 80.730882)">Forecast</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #ffffff" x="310.515186" y="79.286984" transform="rotate(-0 310.515186 79.286984)">A · 0.5 s</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="705.583802" y="79.286984" transform="rotate(-0 705.583802 79.286984)">B · 9.5 s continuation</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="23.325084" y="118.399606" transform="rotate(-0 23.325084 118.399606)">Forecast schematic. Dots: decisions; lower bars: execution.</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="291.563555" y="416.258157" transform="rotate(-0 291.563555 416.258157)">0</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="462.128234" y="416.258157" transform="rotate(-0 462.128234 416.258157)">0.5</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="632.692913" y="416.258157" transform="rotate(-0 632.692913 416.258157)">1</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="803.257593" y="416.258157" transform="rotate(-0 803.257593 416.258157)">1.5</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="973.822272" y="416.258157" transform="rotate(-0 973.822272 416.258157)">2</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="23.325084" y="416.258157" transform="rotate(-0 23.325084 416.258157)">Time (s)</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #008f80" x="23.325084" y="185.855512" transform="rotate(-0 23.325084 185.855512)">1 Hz</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="23.325084" y="239.559622" transform="rotate(-0 23.325084 239.559622)">two moves</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="291.563555" y="156.714433" transform="rotate(-0 291.563555 156.714433)">k</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="632.692913" y="156.714433" transform="rotate(-0 632.692913 156.714433)">k+1</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="973.822272" y="156.714433" transform="rotate(-0 973.822272 156.714433)">k+2</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="462.128234" y="242.447417" transform="rotate(-0 462.128234 242.447417)">queued commands</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #ffffff" x="717.975253" y="242.447417" transform="rotate(-0 717.975253 242.447417)">Aₖ</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #ffffff" x="888.539933" y="242.447417" transform="rotate(-0 888.539933 242.447417)">Bₖ*</text>
+   </g>
+   <g id="text_20">
+    <g id="patch_12">
+     <path d="M 427.052427 204.699976 
+L 517.671802 204.699976 
+L 517.671802 173.855976 
+L 427.052427 173.855976 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="472.362115" y="197.813976" transform="rotate(-0 472.362115 197.813976)">1 s delay</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #b86235" x="23.325084" y="307.142913" transform="rotate(-0 23.325084 307.142913)">2 Hz</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="23.325084" y="360.847024" transform="rotate(-0 23.325084 360.847024)">first move only</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #b86235" x="291.563555" y="278.001835" transform="rotate(-0 291.563555 278.001835)">k</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #b86235" x="462.128234" y="278.001835" transform="rotate(-0 462.128234 278.001835)">k+1</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #b86235" x="632.692913" y="278.001835" transform="rotate(-0 632.692913 278.001835)">k+2</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #b86235" x="803.257593" y="278.001835" transform="rotate(-0 803.257593 278.001835)">k+3</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #b86235" x="973.822272" y="278.001835" transform="rotate(-0 973.822272 278.001835)">k+4</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="462.128234" y="363.734819" transform="rotate(-0 462.128234 363.734819)">queued commands</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #ffffff" x="717.975253" y="363.734819" transform="rotate(-0 717.975253 363.734819)">Aₖ</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #ffffff" x="888.539933" y="363.734819" transform="rotate(-0 888.539933 363.734819)">Aₖ₊₁</text>
+   </g>
+   <g id="text_31">
+    <g id="patch_13">
+     <path d="M 427.052427 325.987378 
+L 517.671802 325.987378 
+L 517.671802 295.143378 
+L 427.052427 295.143378 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #b86235" x="472.362115" y="319.101378" transform="rotate(-0 472.362115 319.101378)">1 s delay</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="23.325084" y="450.496063" transform="rotate(-0 23.325084 450.496063)">* Adjusted 1 Hz execution: Bₖ* = clip(0.88 Bₖ, 2,000, 100,000 N s/m).</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p881ae99ac8">
+   <rect x="0" y="0" width="1020.472441" height="462.047244"/>
+  </clipPath>
+ </defs>
+</svg>

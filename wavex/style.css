@@ -17,3 +17,11 @@
 .animation-toggle:hover{background:#153c4c}
 .animation-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 .animation-toggle[hidden]{display:none}
+
+/* Pair the presentation geometry with its recursive forecast architecture. */
+.method-visuals{display:grid;grid-template-columns:1fr 1.08fr;gap:22px;align-items:start;margin-top:32px}
+.method-visuals .chart{margin-top:0}
+.method-visuals .chart img{padding:18px 16px 0;width:100%}
+.method-visuals .chart figcaption{padding:12px 20px 20px}
+.architecture-pan{overflow-x:auto}
+@media(max-width:900px){.method-visuals{grid-template-columns:1fr}.method-visuals .architecture-chart img{min-width:0}.method-visuals .architecture-chart .architecture-pan{overflow-x:auto}}

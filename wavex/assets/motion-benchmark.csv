@@ -1,5 +1,5 @@
-model,label,all18_mean_percent,all18_between_wave_sample_sd_pp,PTO_six_mean_percent,PTO_six_between_wave_sample_sd_pp
-Persistence,Persistence,114.34555527808445,0.019127291958197727,138.2921821306173,0.06004968665846106
-DirectMLP,Direct MLP,9.44965052328298,0.01911626401376842,8.222963143019651,0.08084355592430349
-TCN,TCN,10.081215900184088,0.27338512270149684,8.687425429008643,0.1766446769780525
-paper_M5_N01,Grey-box,0.3144266388245743,0.0013048415705157511,0.2613697577722649,0.0005042915006898939
+evaluation_group,model,label,normalised_error_percent,forecast_count,wave_count,damping_count,horizon_s,regime_file
+Static damping; shared forecast windows,DirectMLP,Direct MLP,9.44965052328298,17152,2,8,10,DATA_REGIME.json
+Static damping; shared forecast windows,TCN,TCN,10.081215900184088,17152,2,8,10,DATA_REGIME.json
+Static damping; shared forecast windows,paper_M5_N01,Grey-box,0.3144266388245743,17152,2,8,10,DATA_REGIME.json
+Separate changing-damping validation,chronos2_f10_trained,Fine-tuned Chronos-2,23.275746601099446,177,1,10,10,CHRONOS_DATA_REGIME.json

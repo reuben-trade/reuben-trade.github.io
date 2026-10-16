@@ -1,5 +1,5 @@
 model,label,normalised_error_percent,sample_sd_pp,evaluation_group,wave_seeds,damping_grid_N_s_m,forecast_count,nodes_per_forecast,horizon_s
 DirectMLP,Direct MLP,13.055762429992422,0.07470252549361503,Static full21 development,19;20,"21 fixed common dampings,2000..100000",1809360,100,10
 TCN,TCN,13.433694658265756,0.07474854531032092,Static full21 development,19;20,"21 fixed common dampings,2000..100000",1809360,100,10
-paper_M5_N01,Grey-box,0.3747644345396129,0.007023824605864819,Static full21 model-held evaluation,21;22,"21 fixed common dampings,2000..100000",45024,200,10
 chronos2_f10_trained,Fine-tuned Chronos-2,23.275746601099446,,Separate changing-damping development validation,3,"10 common levels,10000..100000,20s dwell",177,200,10
+paper_M5_N01,Grey box recursive rollout,0.3747644345396129,0.007023824605864819,Static full21 model-held evaluation,21;22,"21 fixed common dampings,2000..100000",45024,200,10

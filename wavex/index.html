@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="device-animation.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to research</a>
@@ -31,7 +32,14 @@
       <p class="authors">Reuben Stanley · Maira Alvi · Amitava Datta · Adi Kurniawan</p>
       <div class="actions"><a class="button primary" href="#resources">Compare poster designs <span aria-hidden="true">↗</span></a><a class="button" href="#contact">Get in touch <span aria-hidden="true">↘</span></a></div>
       <div class="hero-grid">
-        <figure class="device-figure"><img src="assets/device-motion.png" width="1920" height="1080" alt="Simulation frame of three D-Spars on a coupled frame: each inner spar moves vertically relative to its outer spar. Surface colour shows ocean-wave elevation."><figcaption>Three D-Spars harvest ocean waves through independent inner-to-outer relative heave, on a rigid coupled frame. Surface colour shows ocean-wave elevation: 6 platform DOFs + 3 relative-heave DOFs.</figcaption></figure>
+        <figure class="device-figure">
+          <div class="device-media">
+            <video id="device-animation" autoplay muted loop playsinline preload="none" poster="assets/device-motion.png" width="960" height="540" data-src="assets/device-motion.mp4" aria-label="Simulation animation of three D-Spars moving in ocean waves" aria-describedby="device-caption">
+              <img src="assets/device-motion.png" width="1920" height="1080" alt="Three D-Spars on a coupled frame in ocean waves.">
+            </video>
+            <button class="animation-toggle" type="button" aria-controls="device-animation" hidden>Play animation</button>
+          </div>
+          <figcaption id="device-caption">Numerical-simulator replay: three D-Spars harvest ocean waves through independent inner-to-outer relative heave, on a rigid coupled frame. Surface colour shows ocean-wave elevation: 6 platform DOFs + 3 relative-heave DOFs.</figcaption></figure>
         <div class="headline-result"><p class="eyebrow">Predictive control in simulation</p><p class="big-number">+17.5<span>%</span></p><h2>More mechanical energy captured</h2><p>Adjusted 1 Hz nonlinear model predictive control (NMPC), compared with fixed damping.</p><p class="result-footnote">Mean paired gain across 36 wave realisations in nine sea states. <a href="#study-notes">Study scope ↓</a></p></div>
       </div>
     </section>

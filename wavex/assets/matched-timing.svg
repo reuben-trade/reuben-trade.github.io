@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-16T16:24:02.237478</dc:date>
+    <dc:date>2026-10-16T18:09:32.932339</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -28,137 +28,172 @@ L 0 0
 z
 " style="fill: #ffffff"/>
   </g>
+  <g id="patch_2">
+   <path d="M 15.562205 318.115276 
+L 1021.91811 318.115276 
+Q 1030.217953 318.115276 1030.217953 315.575433 
+L 1030.217953 254.619213 
+Q 1030.217953 252.07937 1021.91811 252.07937 
+L 15.562205 252.07937 
+Q 7.262362 252.07937 7.262362 254.619213 
+L 7.262362 315.575433 
+Q 7.262362 318.115276 15.562205 318.115276 
+z
+" style="fill: #f6f0eb"/>
+  </g>
   <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 321.618898 190.488189 
-L 1001.168504 190.488189 
-L 1001.168504 22.223622 
-L 321.618898 22.223622 
+   <g id="patch_3">
+    <path d="M 331.993701 176.201575 
+L 995.981102 176.201575 
+L 995.981102 61.908661 
+L 331.993701 61.908661 
 z
 " style="fill: #ffffff"/>
    </g>
    <g id="line2d_1">
-    <path d="M 688.943009 190.488189 
-L 688.943009 22.223622 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke-dasharray: 8,8; stroke-dashoffset: 0; stroke: #008f80; stroke-width: 2"/>
+    <path d="M 690.90581 176.201575 
+L 690.90581 61.908661 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke-dasharray: 8,8; stroke-dashoffset: 0; stroke: #008f80; stroke-width: 2"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_2">
-      <path d="M 321.618898 190.488189 
-L 321.618898 22.223622 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+      <path d="M 331.993701 176.201575 
+L 331.993701 61.908661 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
      </g>
      <g id="line2d_3"/>
      <g id="text_1">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="321.618898" y="224.006189" transform="rotate(-0 321.618898 224.006189)">0</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="331.993701" y="207.719575" transform="rotate(-0 331.993701 207.719575)">0</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_4">
-      <path d="M 505.280953 190.488189 
-L 505.280953 22.223622 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+      <path d="M 511.449755 176.201575 
+L 511.449755 61.908661 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
      </g>
      <g id="line2d_5"/>
      <g id="text_2">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="505.280953" y="224.006189" transform="rotate(-0 505.280953 224.006189)">0.5</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="511.449755" y="207.719575" transform="rotate(-0 511.449755 207.719575)">0.5</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_6">
-      <path d="M 688.943009 190.488189 
-L 688.943009 22.223622 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+      <path d="M 690.90581 176.201575 
+L 690.90581 61.908661 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
      </g>
      <g id="line2d_7"/>
      <g id="text_3">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="688.943009" y="224.006189" transform="rotate(-0 688.943009 224.006189)">1.0</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="690.90581" y="207.719575" transform="rotate(-0 690.90581 207.719575)">1.0</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_8">
-      <path d="M 872.605065 190.488189 
-L 872.605065 22.223622 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
+      <path d="M 870.361864 176.201575 
+L 870.361864 61.908661 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #dde7ec; stroke-linecap: square"/>
      </g>
      <g id="line2d_9"/>
      <g id="text_4">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="872.605065" y="224.006189" transform="rotate(-0 872.605065 224.006189)">1.5</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #637e8b" x="870.361864" y="207.719575" transform="rotate(-0 870.361864 207.719575)">1.5</text>
      </g>
     </g>
     <g id="text_5">
-     <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: middle; fill: #12384b" x="661.393701" y="267.039189" transform="rotate(-0 661.393701 267.039189)">Command computation time (s)</text>
+     <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: middle; fill: #12384b" x="663.987402" y="245.752575" transform="rotate(-0 663.987402 245.752575)">Median command time (s)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_10"/>
      <g id="text_6">
-      <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #12384b" x="304.618898" y="81.474676" transform="rotate(-0 304.618898 81.474676)">Direct suffix scoring</text>
+      <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #12384b" x="316.993701" y="105.632713" transform="rotate(-0 316.993701 105.632713)">Full ML prediction</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_11"/>
      <g id="text_7">
-      <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #008f80" x="304.618898" y="159.737265" transform="rotate(-0 304.618898 159.737265)">POD reconstruction</text>
+      <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #008f80" x="316.993701" y="162.779169" transform="rotate(-0 316.993701 162.779169)">POD reconstruction</text>
      </g>
     </g>
    </g>
-   <g id="patch_3">
-    <path d="M 321.618898 87.964197 
-L 879.64874 87.964197 
-L 879.64874 50.398154 
-L 321.618898 50.398154 
-z
-" clip-path="url(#p92749d50fa)" style="fill: #8ca0ab"/>
-   </g>
    <g id="patch_4">
-    <path d="M 321.618898 166.226786 
-L 605.258919 166.226786 
-L 605.258919 128.660743 
-L 321.618898 128.660743 
+    <path d="M 331.993701 105.339969 
+L 877.244234 105.339969 
+L 877.244234 81.338457 
+L 331.993701 81.338457 
 z
-" clip-path="url(#p92749d50fa)" style="fill: #008f80"/>
-   </g>
-   <g id="LineCollection_1">
-    <path d="M 879.64874 69.181176 
-L 881.883934 69.181176 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 3"/>
-    <path d="M 605.258919 147.443765 
-L 606.265195 147.443765 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 3"/>
-   </g>
-   <g id="LineCollection_2">
-    <path d="M 881.883934 78.572686 
-L 881.883934 59.789665 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 2.5"/>
-    <path d="M 606.265195 156.835276 
-L 606.265195 138.052254 
-" clip-path="url(#p92749d50fa)" style="fill: none; stroke: #12384b; stroke-width: 2.5"/>
+" clip-path="url(#p05b28cc9e2)" style="fill: #8ca0ab"/>
    </g>
    <g id="patch_5">
-    <path d="M 321.618898 190.488189 
-L 1001.168504 190.488189 
+    <path d="M 331.993701 162.486425 
+L 609.138149 162.486425 
+L 609.138149 138.484913 
+L 331.993701 138.484913 
+z
+" clip-path="url(#p05b28cc9e2)" style="fill: #008f80"/>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 877.244234 93.339213 
+L 879.42824 93.339213 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #12384b; stroke-width: 3"/>
+    <path d="M 609.138149 150.485669 
+L 610.12138 150.485669 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #12384b; stroke-width: 3"/>
+   </g>
+   <g id="LineCollection_2">
+    <path d="M 879.42824 100.196787 
+L 879.42824 86.481638 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #12384b; stroke-width: 2.5"/>
+    <path d="M 610.12138 157.343244 
+L 610.12138 143.628094 
+" clip-path="url(#p05b28cc9e2)" style="fill: none; stroke: #12384b; stroke-width: 2.5"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 331.993701 176.201575 
+L 995.981102 176.201575 
 " style="fill: none; stroke: #dde7ec; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_8">
-    <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="688.943009" y="23.788874" transform="rotate(-0 688.943009 23.788874)">1 Hz budget</text>
+    <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #008f80" x="690.90581" y="66.480378" transform="rotate(-0 690.90581 66.480378)">1 Hz budget</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 28px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="894.341705" y="80.045176" transform="rotate(-0 894.341705 80.045176)">1.519 s</text>
+    <g id="patch_7">
+     <path d="M 889.546158 111.305213 
+L 975.74022 111.305213 
+L 975.74022 75.373213 
+L 889.546158 75.373213 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 26px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="889.806158" y="103.427213" transform="rotate(-0 889.806158 103.427213)">1.519 s</text>
    </g>
    <g id="text_10">
-    <text style="font-weight: 700; font-size: 28px; font-family: 'Noto Sans'; text-anchor: start; fill: #008f80" x="619.951883" y="158.307765" transform="rotate(-0 619.951883 158.307765)">0.772 s</text>
+    <g id="patch_8">
+     <path d="M 621.440073 168.451669 
+L 708.544135 168.451669 
+L 708.544135 132.519669 
+L 621.440073 132.519669 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-weight: 700; font-size: 26px; font-family: 'Noto Sans'; text-anchor: start; fill: #008f80" x="621.700073" y="160.573669" transform="rotate(-0 621.700073 160.573669)">0.772 s</text>
    </g>
   </g>
   <g id="text_11">
-   <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="25.937008" y="306.368504" transform="rotate(-0 25.937008 306.368504)">Median; caps: 95th percentile · eight requests × ten repeats</text>
+   <text style="font-weight: 700; font-size: 24px; font-family: 'Noto Sans'; text-anchor: start; fill: #12384b" x="26.974488" y="30.16063" transform="rotate(-0 26.974488 30.16063)">8 × 41 = 328 candidate trajectories</text>
+  </g>
+  <g id="text_12">
+   <text style="font-weight: 700; font-size: 22px; font-family: 'Noto Sans'; text-anchor: start; fill: #b86235" x="31.124409" y="276.207874" transform="rotate(-0 31.124409 276.207874)">Reference NL numerical model: 40.84 s median</text>
+  </g>
+  <g id="text_13">
+   <text style="font-size: 19px; font-family: 'Noto Sans'; text-anchor: start; fill: #637e8b" x="31.124409" y="306.051024" transform="rotate(-0 31.124409 306.051024)">Separate earlier search: 41 screen actions + 42–49 plans · CPU / MATLAB</text>
   </g>
  </g>
  <defs>
-  <clipPath id="p92749d50fa">
-   <rect x="321.618898" y="22.223622" width="679.549606" height="168.264567"/>
+  <clipPath id="p05b28cc9e2">
+   <rect x="331.993701" y="61.908661" width="663.987402" height="114.292913"/>
   </clipPath>
  </defs>
 </svg>

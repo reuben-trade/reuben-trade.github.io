@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1020.472441pt" height="212.598425pt" viewBox="0 0 1020.472441 212.598425" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-16T18:09:05.416648</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 212.598425 
+L 1020.472441 212.598425 
+L 1020.472441 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 234.708661 131.811024 
+L 1000.062992 131.811024 
+L 1000.062992 17.007874 
+L 234.708661 17.007874 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 234.708661 131.811024 
+L 234.708661 17.007874 
+" clip-path="url(#p54594d0d2a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="me53b27a511" d="M 0 0 
+L 0 3.5 
+" style="stroke: #51636c; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#me53b27a511" x="234.708661" y="131.811024" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="234.708661" y="162.329024" transform="rotate(-0 234.708661 162.329024)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 453.381327 131.811024 
+L 453.381327 17.007874 
+" clip-path="url(#p54594d0d2a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#me53b27a511" x="453.381327" y="131.811024" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="453.381327" y="162.329024" transform="rotate(-0 453.381327 162.329024)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 672.053993 131.811024 
+L 672.053993 17.007874 
+" clip-path="url(#p54594d0d2a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#me53b27a511" x="672.053993" y="131.811024" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="672.053993" y="162.329024" transform="rotate(-0 672.053993 162.329024)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 890.726659 131.811024 
+L 890.726659 17.007874 
+" clip-path="url(#p54594d0d2a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#me53b27a511" x="890.726659" y="131.811024" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="890.726659" y="162.329024" transform="rotate(-0 890.726659 162.329024)">60</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #173443" x="617.385827" y="201.293024" transform="rotate(-0 617.385827 201.293024)">Normalised error (%) — lower is better</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="225.708661" y="50.909496" transform="rotate(-0 225.708661 50.909496)">Zero-shot</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="225.708661" y="121.427401" transform="rotate(-0 225.708661 121.427401)">Fine-tuned</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 234.708661 131.811024 
+L 1000.062992 131.811024 
+" style="fill: none; stroke: #b8c5cb; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 234.708661 22.226199 
+L 851.146108 22.226199 
+L 851.146108 56.074793 
+L 234.708661 56.074793 
+z
+" clip-path="url(#p54594d0d2a)" style="fill: #9a85ba"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 234.708661 92.744104 
+L 489.197139 92.744104 
+L 489.197139 126.592699 
+L 234.708661 126.592699 
+z
+" clip-path="url(#p54594d0d2a)" style="fill: #66418d"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 24px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="866.453195" y="48.462496" transform="rotate(-0 866.453195 48.462496)">56.38%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 24px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="504.504226" y="118.980401" transform="rotate(-0 504.504226 118.980401)">23.28%</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p54594d0d2a">
+   <rect x="234.708661" y="17.007874" width="765.354331" height="114.80315"/>
+  </clipPath>
+ </defs>
+</svg>

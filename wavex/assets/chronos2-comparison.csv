@@ -1,0 +1,3 @@
+model,mean_motion_nrmse_percent,split,wave_seed,forecasts,future_nodes,channel_count
+Chronos-2 zero-shot,56.379926996465095,validation,3,177,200,18
+Chronos-2 fine-tuned LoRA,23.275746601099446,validation,3,177,200,18

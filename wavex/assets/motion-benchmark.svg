@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-16T20:24:53.430423</dc:date>
+    <dc:date>2026-10-16T21:02:44.657323</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,248 +30,206 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 290.834646 226.275591 
-L 989.858268 226.275591 
-L 989.858268 70.299213 
-L 290.834646 70.299213 
+    <path d="M 290.834646 298.771654 
+L 989.858268 298.771654 
+L 989.858268 74.692913 
+L 290.834646 74.692913 
 z
 " style="fill: #ffffff"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
-      <path d="M 290.834646 226.275591 
-L 290.834646 70.299213 
-" clip-path="url(#p16b6c0eeaa)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 290.834646 298.771654 
+L 290.834646 74.692913 
+" clip-path="url(#p5de2838ede)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_2">
       <defs>
-       <path id="mc7c6ac21e9" d="M 0 0 
+       <path id="mb9f0a02eee" d="M 0 0 
 L 0 3.5 
 " style="stroke: #51636c; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#mc7c6ac21e9" x="290.834646" y="226.275591" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+       <use xlink:href="#mb9f0a02eee" x="290.834646" y="298.771654" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="290.834646" y="255.724591" transform="rotate(-0 290.834646 255.724591)">0</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="290.834646" y="329.289654" transform="rotate(-0 290.834646 329.289654)">0</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_3">
-      <path d="M 509.279528 226.275591 
-L 509.279528 70.299213 
-" clip-path="url(#p16b6c0eeaa)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 411.35596 298.771654 
+L 411.35596 74.692913 
+" clip-path="url(#p5de2838ede)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_4">
       <g>
-       <use xlink:href="#mc7c6ac21e9" x="509.279528" y="226.275591" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+       <use xlink:href="#mb9f0a02eee" x="411.35596" y="298.771654" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="509.279528" y="255.724591" transform="rotate(-0 509.279528 255.724591)">4</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="411.35596" y="329.289654" transform="rotate(-0 411.35596 329.289654)">5</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_5">
-      <path d="M 727.724409 226.275591 
-L 727.724409 70.299213 
-" clip-path="url(#p16b6c0eeaa)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 531.877274 298.771654 
+L 531.877274 74.692913 
+" clip-path="url(#p5de2838ede)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_6">
       <g>
-       <use xlink:href="#mc7c6ac21e9" x="727.724409" y="226.275591" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+       <use xlink:href="#mb9f0a02eee" x="531.877274" y="298.771654" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="727.724409" y="255.724591" transform="rotate(-0 727.724409 255.724591)">8</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="531.877274" y="329.289654" transform="rotate(-0 531.877274 329.289654)">10</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_7">
-      <path d="M 946.169291 226.275591 
-L 946.169291 70.299213 
-" clip-path="url(#p16b6c0eeaa)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 652.398588 298.771654 
+L 652.398588 74.692913 
+" clip-path="url(#p5de2838ede)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_8">
       <g>
-       <use xlink:href="#mc7c6ac21e9" x="946.169291" y="226.275591" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+       <use xlink:href="#mb9f0a02eee" x="652.398588" y="298.771654" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="946.169291" y="255.724591" transform="rotate(-0 946.169291 255.724591)">12</text>
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="652.398588" y="329.289654" transform="rotate(-0 652.398588 329.289654)">15</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 772.919902 298.771654 
+L 772.919902 74.692913 
+" clip-path="url(#p5de2838ede)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mb9f0a02eee" x="772.919902" y="298.771654" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="772.919902" y="329.289654" transform="rotate(-0 772.919902 329.289654)">20</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 893.441216 298.771654 
+L 893.441216 74.692913 
+" clip-path="url(#p5de2838ede)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#mb9f0a02eee" x="893.441216" y="298.771654" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="893.441216" y="329.289654" transform="rotate(-0 893.441216 329.289654)">25</text>
      </g>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
-     <g id="line2d_9"/>
-     <g id="text_5">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="280.834646" y="103.777867" transform="rotate(-0 280.834646 103.777867)">Direct MLP</text>
+     <g id="line2d_13"/>
+     <g id="text_7">
+      <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="280.834646" y="112.708857" transform="rotate(-0 280.834646 112.708857)">Direct MLP</text>
      </g>
     </g>
     <g id="ytick_2">
-     <g id="line2d_10"/>
-     <g id="text_6">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="280.834646" y="160.046402" transform="rotate(-0 280.834646 160.046402)">TCN</text>
+     <g id="line2d_14"/>
+     <g id="text_8">
+      <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="280.834646" y="170.253475" transform="rotate(-0 280.834646 170.253475)">TCN</text>
      </g>
     </g>
     <g id="ytick_3">
-     <g id="line2d_11"/>
-     <g id="text_7">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="280.834646" y="216.314936" transform="rotate(-0 280.834646 216.314936)">Grey-box</text>
+     <g id="line2d_15"/>
+     <g id="text_9">
+      <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: end; fill: #173443" x="280.834646" y="227.798092" transform="rotate(-0 280.834646 227.798092)">Grey-box</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_16"/>
+     <g id="text_10">
+      <text style="font-size: 23px; font-family: 'Noto Sans'; fill: #173443" transform="translate(164.522927 269.67971)">Fine-tuned</text>
+      <text style="font-size: 23px; font-family: 'Noto Sans'; fill: #173443" transform="translate(169.421208 301.00571)">Chronos-2</text>
      </g>
     </g>
    </g>
    <g id="patch_3">
-    <path d="M 290.834646 226.275591 
-L 989.858268 226.275591 
+    <path d="M 290.834646 298.771654 
+L 989.858268 298.771654 
 " style="fill: none; stroke: #b8c5cb; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
-    <path d="M 290.834646 77.389048 
-L 806.891594 77.389048 
-L 806.891594 106.648686 
-L 290.834646 106.648686 
+    <path d="M 290.834646 84.878311 
+L 605.534175 84.878311 
+L 605.534175 115.952404 
+L 290.834646 115.952404 
 z
-" clip-path="url(#p16b6c0eeaa)" style="fill: #8b68b1"/>
+" clip-path="url(#p5de2838ede)" style="fill: #8b68b1"/>
    </g>
    <g id="patch_5">
-    <path d="M 290.834646 133.657583 
-L 841.38215 133.657583 
-L 841.38215 162.917221 
-L 290.834646 162.917221 
+    <path d="M 290.834646 142.422928 
+L 614.643952 142.422928 
+L 614.643952 173.497021 
+L 290.834646 173.497021 
 z
-" clip-path="url(#p16b6c0eeaa)" style="fill: #426f9e"/>
+" clip-path="url(#p5de2838ede)" style="fill: #426f9e"/>
    </g>
    <g id="patch_6">
-    <path d="M 290.834646 189.926117 
-L 308.005868 189.926117 
-L 308.005868 219.185755 
-L 290.834646 219.185755 
+    <path d="M 290.834646 199.967545 
+L 299.868066 199.967545 
+L 299.868066 231.041639 
+L 290.834646 231.041639 
 z
-" clip-path="url(#p16b6c0eeaa)" style="fill: #007d87"/>
+" clip-path="url(#p5de2838ede)" style="fill: #007d87"/>
    </g>
-   <g id="text_8">
-    <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="817.813838" y="100.942867" transform="rotate(-0 817.813838 100.942867)">9.45%</text>
-   </g>
-   <g id="text_9">
-    <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="852.304394" y="157.211402" transform="rotate(-0 852.304394 157.211402)">10.08%</text>
-   </g>
-   <g id="text_10">
-    <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #007d87" x="318.928112" y="213.479936" transform="rotate(-0 318.928112 213.479936)">0.31%</text>
-   </g>
-  </g>
-  <g id="axes_2">
    <g id="patch_7">
-    <path d="M 290.834646 372.146457 
-L 989.858268 372.146457 
-L 989.858268 328.209449 
-L 290.834646 328.209449 
+    <path d="M 290.834646 257.512163 
+L 851.879359 257.512163 
+L 851.879359 288.586256 
+L 290.834646 288.586256 
 z
-" style="fill: #ffffff"/>
+" clip-path="url(#p5de2838ede)" style="fill: #66418d"/>
    </g>
-   <g id="matplotlib.axis_3">
-    <g id="xtick_5">
-     <g id="line2d_12">
-      <path d="M 290.834646 372.146457 
-L 290.834646 328.209449 
-" clip-path="url(#pcf30775a4a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_13">
-      <g>
-       <use xlink:href="#mc7c6ac21e9" x="290.834646" y="372.146457" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_11">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="290.834646" y="401.595457" transform="rotate(-0 290.834646 401.595457)">0</text>
-     </g>
-    </g>
-    <g id="xtick_6">
-     <g id="line2d_14">
-      <path d="M 531.877274 372.146457 
-L 531.877274 328.209449 
-" clip-path="url(#pcf30775a4a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_15">
-      <g>
-       <use xlink:href="#mc7c6ac21e9" x="531.877274" y="372.146457" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="531.877274" y="401.595457" transform="rotate(-0 531.877274 401.595457)">10</text>
-     </g>
-    </g>
-    <g id="xtick_7">
-     <g id="line2d_16">
-      <path d="M 772.919902 372.146457 
-L 772.919902 328.209449 
-" clip-path="url(#pcf30775a4a)" style="fill: none; stroke: #e6ecef; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_17">
-      <g>
-       <use xlink:href="#mc7c6ac21e9" x="772.919902" y="372.146457" style="fill: #51636c; stroke: #51636c; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_13">
-      <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: middle; fill: #51636c" x="772.919902" y="401.595457" transform="rotate(-0 772.919902 401.595457)">20</text>
-     </g>
-    </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="617.104221" y="110.115357" transform="rotate(-0 617.104221 110.115357)">13.06%</text>
    </g>
-   <g id="matplotlib.axis_4">
-    <g id="ytick_4">
-     <g id="line2d_18"/>
-     <g id="text_14">
-      <text style="font-size: 22px; font-family: 'Noto Sans'; fill: #173443" transform="translate(169.579958 346.954953)">Fine-tuned</text>
-      <text style="font-size: 22px; font-family: 'Noto Sans'; fill: #173443" transform="translate(174.265271 376.918953)">Chronos-2</text>
-     </g>
-    </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="626.213999" y="167.659975" transform="rotate(-0 626.213999 167.659975)">13.43%</text>
    </g>
-   <g id="patch_8">
-    <path d="M 290.834646 372.146457 
-L 989.858268 372.146457 
-" style="fill: none; stroke: #b8c5cb; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #007d87" x="311.438112" y="225.204592" transform="rotate(-0 311.438112 225.204592)">0.375%</text>
    </g>
-   <g id="patch_9">
-    <path d="M 290.834646 360.317262 
-L 851.879359 360.317262 
-L 851.879359 340.038643 
-L 290.834646 340.038643 
-z
-" clip-path="url(#pcf30775a4a)" style="fill: #66418d"/>
-   </g>
-   <g id="text_15">
-    <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #66418d" x="863.931491" y="359.101953" transform="rotate(-0 863.931491 359.101953)">23.28%</text>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #66418d" x="863.449405" y="282.74921" transform="rotate(-0 863.449405 282.74921)">23.28%</text>
    </g>
   </g>
-  <g id="line2d_19">
-   <path d="M 25.511811 261.425197 
-L 1000.062992 261.425197 
-" style="fill: none; stroke: #c4cfd5; stroke-width: 1.4; stroke-linecap: square"/>
+  <g id="text_15">
+   <text style="font-weight: 700; font-size: 25px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="25.511811" y="33.315551" transform="rotate(-0 25.511811 33.315551)">Motion prediction across the damping range</text>
   </g>
   <g id="text_16">
-   <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="25.511811" y="31.177551" transform="rotate(-0 25.511811 31.177551)">Static damping · shared forecast windows</text>
+   <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: start; fill: #51636c" x="25.511811" y="62.871047" transform="rotate(-0 25.511811 62.871047)">MLP / TCN / grey-box: 21 settings · 2k–100k N s/m</text>
   </g>
   <g id="text_17">
-   <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: start; fill: #51636c" x="25.511811" y="58.477346" transform="rotate(-0 25.511811 58.477346)">2 waves × 8 dampings · 10 s forecasts</text>
+   <text style="font-size: 23px; font-family: 'Noto Sans'; text-anchor: middle; fill: #173443" x="530.645669" y="358.223213" transform="rotate(-0 530.645669 358.223213)">Normalised error (%) — lower is better</text>
   </g>
   <g id="text_18">
-   <text style="font-weight: 700; font-size: 23px; font-family: 'Noto Sans'; text-anchor: start; fill: #173443" x="25.511811" y="297.435819" transform="rotate(-0 25.511811 297.435819)">Separate changing-damping validation</text>
+   <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: start; fill: #51636c" x="25.511811" y="396.99052" transform="rotate(-0 25.511811 396.99052)">Provisional comparison · evaluation cohorts differ</text>
   </g>
   <g id="text_19">
-   <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: start; fill: #51636c" x="25.511811" y="320.341913" transform="rotate(-0 25.511811 320.341913)">177 forecasts · one wave · 10 s horizon</text>
-  </g>
-  <g id="text_20">
-   <text style="font-size: 22px; font-family: 'Noto Sans'; text-anchor: middle; fill: #173443" x="530.645669" y="428.134425" transform="rotate(-0 530.645669 428.134425)">Normalised error (%) — lower is better</text>
+   <text style="font-size: 21px; font-family: 'Noto Sans'; text-anchor: start; fill: #51636c" x="25.511811" y="426.867685" transform="rotate(-0 25.511811 426.867685)">Chronos: separate changing-damping validation</text>
   </g>
  </g>
  <defs>
-  <clipPath id="p16b6c0eeaa">
-   <rect x="290.834646" y="70.299213" width="699.023622" height="155.976378"/>
-  </clipPath>
-  <clipPath id="pcf30775a4a">
-   <rect x="290.834646" y="328.209449" width="699.023622" height="43.937008"/>
+  <clipPath id="p5de2838ede">
+   <rect x="290.834646" y="74.692913" width="699.023622" height="224.07874"/>
   </clipPath>
  </defs>
 </svg>

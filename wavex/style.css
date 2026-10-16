@@ -26,7 +26,7 @@
 .architecture-pan{overflow-x:auto}
 @media(max-width:900px){.method-visuals{grid-template-columns:1fr}.method-visuals .architecture-chart img{min-width:0}.method-visuals .architecture-chart .architecture-pan{overflow-x:auto}}
 
-/* Give the researcher clear prominence and distinguish supervisory credit. */
-.authors{margin-top:24px}.research-author{font-size:clamp(1.55rem,2.3vw,2rem);font-weight:600;color:var(--ink);line-height:1.2}.supervisors{font-size:13px;line-height:1.6;margin-top:13px}.supervisors span{display:block;font:10px/1.5 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}.force-definition{font-size:17px;line-height:1.8;color:var(--ink);overflow-wrap:anywhere}
+/* Keep the authors together, with the lead researcher's name in bold. */
+.authors.author-line{margin-top:24px;font-size:clamp(14px,1.5vw,18px);line-height:1.6;color:var(--ink)}.author-line strong{font-weight:600}.force-definition{font-size:17px;line-height:1.8;color:var(--ink);overflow-wrap:anywhere}
 
 @media(max-width:650px){.motion-chart .figure-pan img{min-width:650px}.motion-chart figcaption::before{content:"Swipe the chart to explore → ";font-weight:600;display:block;margin-bottom:8px}}
